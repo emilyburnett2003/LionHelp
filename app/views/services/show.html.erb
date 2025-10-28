@@ -1,0 +1,21 @@
+<h2><%= @service.title %></h2>
+
+<ul class="list-group">
+  <li class="list-group-item"><strong>Poster:</strong> <%= @service.poster %></li>
+  <li class="list-group-item"><strong>Description:</strong> <%= @service.description %></li>
+  <li class="list-group-item"><strong>Price:</strong> 
+    <% if @service.price.present? %>
+      $<%= number_with_precision(@service.price, precision: 2) %>
+    <% else %>
+      Not specified
+    <% end %>
+  </li>
+</ul>
+
+<br/>
+
+<%= link_to 'All Services', services_path, class: 'btn btn-secondary' %>
+<%= link_to 'Delete', service_path(@service),
+            method: :delete,
+            data: { confirm: 'Are you sure you want to delete this service?' },
+            class: 'btn btn-danger' %>

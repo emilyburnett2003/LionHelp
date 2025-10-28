@@ -2853,3 +2853,337 @@ Processing by MoviesController#index as HTML
   Rendered layout layouts/application.html.erb (Duration: 3.6ms | GC: 0.0ms)
 Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by ServicesController#create as HTML
+  Parameters: {"service"=>{"description"=>"desc", "poster"=>"Emily", "price"=>"15.0", "title"=>"Laundry Help"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mService Create (0.1ms)[0m  [1m[32mINSERT INTO "services" ("title", "description", "price", "poster", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Laundry Help"], ["description", "desc"], ["price", 15.0], ["poster", "Emily"], ["created_at", "2025-10-28 10:59:31.568663"], ["updated_at", "2025-10-28 10:59:31.568663"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/services/1
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mService Load (0.0ms)[0m  [1m[34mSELECT "services".* FROM "services" ORDER BY "services"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mService Create (0.1ms)[0m  [1m[32mINSERT INTO "services" ("title", "description", "price", "poster", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Laundry Help"], ["description", "desc"], ["price", 15.0], ["poster", "Emily"], ["created_at", "2025-10-28 10:59:31.586669"], ["updated_at", "2025-10-28 10:59:31.586669"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ServicesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mService Load (0.0ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering services/show.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered services/show.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered layout layouts/application.html.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 2.7ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mService Create (0.1ms)[0m  [1m[32mINSERT INTO "services" ("title", "description", "price", "poster", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Laundry Help"], ["description", "desc"], ["price", 15.0], ["poster", "Emily"], ["created_at", "2025-10-28 10:59:31.597759"], ["updated_at", "2025-10-28 10:59:31.597759"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mService Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "services"[0m
+Processing by ServicesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mService Load (0.0ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mService Destroy (0.1ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/services/new
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mService Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "services"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by ServicesController#create as HTML
+  Parameters: {"service"=>{"description"=>"desc", "poster"=>"Emily", "price"=>"15.0", "title"=>"Laundry Help"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mService Create (0.2ms)[0m  [1m[32mINSERT INTO "services" ("title", "description", "price", "poster", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Laundry Help"], ["description", "desc"], ["price", 15.0], ["poster", "Emily"], ["created_at", "2025-10-28 11:01:33.250950"], ["updated_at", "2025-10-28 11:01:33.250950"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/services/1
+Completed 302 Found in 11ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 4.9ms)
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" ORDER BY "services"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mService Create (0.1ms)[0m  [1m[32mINSERT INTO "services" ("title", "description", "price", "poster", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Laundry Help"], ["description", "desc"], ["price", 15.0], ["poster", "Emily"], ["created_at", "2025-10-28 11:01:33.274472"], ["updated_at", "2025-10-28 11:01:33.274472"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ServicesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering services/show.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered services/show.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered layout layouts/application.html.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 2.8ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mService Create (0.2ms)[0m  [1m[32mINSERT INTO "services" ("title", "description", "price", "poster", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Laundry Help"], ["description", "desc"], ["price", 15.0], ["poster", "Emily"], ["created_at", "2025-10-28 11:01:33.286963"], ["updated_at", "2025-10-28 11:01:33.286963"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mService Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "services"[0m
+Processing by ServicesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mService Load (0.0ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mService Destroy (0.1ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/services/new
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mService Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "services"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/services/new" for 127.0.0.1 at 2025-10-28 07:01:55 -0400
+Processing by ServicesController#new as HTML
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  Rendering layout layouts/application.html.erb
+  Rendering services/new.html.erb within layouts/application
+  Rendered services/new.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 1.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 241.1ms | GC: 35.8ms)
+Completed 200 OK in 258ms (Views: 243.9ms | ActiveRecord: 0.3ms (0 queries, 0 cached) | GC: 36.3ms)
+Started POST "/services" for 127.0.0.1 at 2025-10-28 07:01:55 -0400
+Processing by ServicesController#create as HTML
+  Parameters: {"utf8"=>"✓", "service"=>{"title"=>"Laundry Help", "poster"=>"Emily", "description"=>"Need help folding laundry", "price"=>"15.00"}, "commit"=>"Create Service Post"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mService Create (0.2ms)[0m  [1m[32mINSERT INTO "services" ("title", "description", "price", "poster", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Laundry Help"], ["description", "Need help folding laundry"], ["price", 15.0], ["poster", "Emily"], ["created_at", "2025-10-28 11:01:55.292167"], ["updated_at", "2025-10-28 11:01:55.292167"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/services/1
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+Started GET "/services/1" for 127.0.0.1 at 2025-10-28 07:01:55 -0400
+Processing by ServicesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering services/show.html.erb within layouts/application
+  Rendered services/show.html.erb within layouts/application (Duration: 4.0ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 6.1ms | GC: 4.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | GC: 4.8ms)
+Completed 200 OK in 18ms (Views: 10.7ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 4.8ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mService Create (0.2ms)[0m  [1m[32mINSERT INTO "services" ("title", "description", "price", "poster", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Laundry Help"], ["description", "Need help folding laundry"], ["price", 15.0], ["poster", "Emily"], ["created_at", "2025-10-28 11:01:55.321269"], ["updated_at", "2025-10-28 11:01:55.321269"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."title" = ? LIMIT ?[0m  [["title", "Laundry Help"], ["LIMIT", 1]]
+Started GET "/services/1" for 127.0.0.1 at 2025-10-28 07:01:55 -0400
+Processing by ServicesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering services/show.html.erb within layouts/application
+  Rendered services/show.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mService Create (0.2ms)[0m  [1m[32mINSERT INTO "services" ("title", "description", "price", "poster", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Laundry Help"], ["description", "Need help folding laundry"], ["price", 15.0], ["poster", "Emily"], ["created_at", "2025-10-28 11:01:55.326852"], ["updated_at", "2025-10-28 11:01:55.326852"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mService Load (0.0ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."title" = ? LIMIT ?[0m  [["title", "Laundry Help"], ["LIMIT", 1]]
+Started GET "/services/1" for 127.0.0.1 at 2025-10-28 07:01:55 -0400
+Processing by ServicesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mService Load (0.0ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering services/show.html.erb within layouts/application
+  Rendered services/show.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.0ms)
+Started DELETE "/services/1" for 127.0.0.1 at 2025-10-28 07:01:55 -0400
+Processing by ServicesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mService Load (0.0ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/services/new
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.0ms)
+Started GET "/services/new" for 127.0.0.1 at 2025-10-28 07:01:55 -0400
+Processing by ServicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering services/new.html.erb within layouts/application
+  Rendered services/new.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/services/new" for 127.0.0.1 at 2025-10-28 07:02:57 -0400
+Processing by ServicesController#new as HTML
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  Rendering layout layouts/application.html.erb
+  Rendering services/new.html.erb within layouts/application
+  Rendered services/new.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 80.9ms | GC: 35.9ms)
+Completed 200 OK in 97ms (Views: 83.5ms | ActiveRecord: 0.4ms (0 queries, 0 cached) | GC: 35.9ms)
+Started POST "/services" for 127.0.0.1 at 2025-10-28 07:02:57 -0400
+Processing by ServicesController#create as HTML
+  Parameters: {"utf8"=>"✓", "service"=>{"title"=>"Laundry Help", "poster"=>"Emily", "description"=>"Need help folding laundry", "price"=>"15.00"}, "commit"=>"Create Service Post"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mService Create (0.6ms)[0m  [1m[32mINSERT INTO "services" ("title", "description", "price", "poster", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Laundry Help"], ["description", "Need help folding laundry"], ["price", 15.0], ["poster", "Emily"], ["created_at", "2025-10-28 11:02:57.718271"], ["updated_at", "2025-10-28 11:02:57.718271"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/services/1
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+Started GET "/services/1" for 127.0.0.1 at 2025-10-28 07:02:57 -0400
+Processing by ServicesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering services/show.html.erb within layouts/application
+  Rendered services/show.html.erb within layouts/application (Duration: 4.3ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 5.8ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mService Create (0.2ms)[0m  [1m[32mINSERT INTO "services" ("title", "description", "price", "poster", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Laundry Help"], ["description", "Need help folding laundry"], ["price", 15.0], ["poster", "Emily"], ["created_at", "2025-10-28 11:02:57.736650"], ["updated_at", "2025-10-28 11:02:57.736650"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."title" = ? LIMIT ?[0m  [["title", "Laundry Help"], ["LIMIT", 1]]
+Started GET "/services/1" for 127.0.0.1 at 2025-10-28 07:02:57 -0400
+Processing by ServicesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mService Load (0.0ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering services/show.html.erb within layouts/application
+  Rendered services/show.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mService Create (0.2ms)[0m  [1m[32mINSERT INTO "services" ("title", "description", "price", "poster", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Laundry Help"], ["description", "Need help folding laundry"], ["price", 15.0], ["poster", "Emily"], ["created_at", "2025-10-28 11:02:57.741818"], ["updated_at", "2025-10-28 11:02:57.741818"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mService Load (0.0ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."title" = ? LIMIT ?[0m  [["title", "Laundry Help"], ["LIMIT", 1]]
+Started GET "/services/1" for 127.0.0.1 at 2025-10-28 07:02:57 -0400
+Processing by ServicesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mService Load (0.0ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering services/show.html.erb within layouts/application
+  Rendered services/show.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.0ms)
+Started DELETE "/services/1" for 127.0.0.1 at 2025-10-28 07:02:57 -0400
+Processing by ServicesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mService Load (0.0ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mService Destroy (0.1ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/services
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+Started GET "/services" for 127.0.0.1 at 2025-10-28 07:02:57 -0400
+Processing by ServicesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering services/index.html.erb within layouts/application
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  Rendered services/index.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/services/new" for 127.0.0.1 at 2025-10-28 07:03:54 -0400
+Processing by ServicesController#new as HTML
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  Rendering layout layouts/application.html.erb
+  Rendering services/new.html.erb within layouts/application
+  Rendered services/new.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 2.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 84.0ms | GC: 36.2ms)
+Completed 200 OK in 101ms (Views: 86.7ms | ActiveRecord: 0.4ms (0 queries, 0 cached) | GC: 36.7ms)
+Started POST "/services" for 127.0.0.1 at 2025-10-28 07:03:54 -0400
+Processing by ServicesController#create as HTML
+  Parameters: {"utf8"=>"✓", "service"=>{"title"=>"Laundry Help", "poster"=>"Emily", "description"=>"Need help folding laundry", "price"=>"15.00"}, "commit"=>"Create Service Post"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mService Create (0.2ms)[0m  [1m[32mINSERT INTO "services" ("title", "description", "price", "poster", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Laundry Help"], ["description", "Need help folding laundry"], ["price", 15.0], ["poster", "Emily"], ["created_at", "2025-10-28 11:03:54.236509"], ["updated_at", "2025-10-28 11:03:54.236509"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/services/1
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+Started GET "/services/1" for 127.0.0.1 at 2025-10-28 07:03:54 -0400
+Processing by ServicesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering services/show.html.erb within layouts/application
+  Rendered services/show.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 6.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mService Create (0.2ms)[0m  [1m[32mINSERT INTO "services" ("title", "description", "price", "poster", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Laundry Help"], ["description", "Need help folding laundry"], ["price", 15.0], ["poster", "Emily"], ["created_at", "2025-10-28 11:03:54.255287"], ["updated_at", "2025-10-28 11:03:54.255287"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."title" = ? LIMIT ?[0m  [["title", "Laundry Help"], ["LIMIT", 1]]
+Started GET "/services/1" for 127.0.0.1 at 2025-10-28 07:03:54 -0400
+Processing by ServicesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mService Load (0.0ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering services/show.html.erb within layouts/application
+  Rendered services/show.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mService Create (0.2ms)[0m  [1m[32mINSERT INTO "services" ("title", "description", "price", "poster", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Laundry Help"], ["description", "Need help folding laundry"], ["price", 15.0], ["poster", "Emily"], ["created_at", "2025-10-28 11:03:54.259730"], ["updated_at", "2025-10-28 11:03:54.259730"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mService Load (0.0ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."title" = ? LIMIT ?[0m  [["title", "Laundry Help"], ["LIMIT", 1]]
+Started GET "/services/1" for 127.0.0.1 at 2025-10-28 07:03:54 -0400
+Processing by ServicesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mService Load (0.0ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering services/show.html.erb within layouts/application
+  Rendered services/show.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.0ms)
+Started DELETE "/services/1" for 127.0.0.1 at 2025-10-28 07:03:54 -0400
+Processing by ServicesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mService Load (0.0ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mService Destroy (0.1ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/services
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+Started GET "/services" for 127.0.0.1 at 2025-10-28 07:03:54 -0400
+Processing by ServicesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering services/index.html.erb within layouts/application
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  Rendered services/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m

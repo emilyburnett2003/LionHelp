@@ -1,12 +1,18 @@
 <h2>Create New Service</h2>
 
 <%= form_tag services_path, class: 'form' do %>
-  <%= label :service, :title, 'Title', class:'col-form-label' %>
+  <%= label :service, :title, 'Title', class: 'col-form-label' %>
   <%= text_field :service, :title, class: 'form-control' %>
+
   <%= label :service, :poster, 'Poster', class: 'col-form-label' %>
-  <%= text_field :service, 'Poster', class: 'form-control' %>
-  <%= label :service, :category, 'Category', class: 'col-form-label'  %>
-  <%= select :service, :category, ['dorm', 'class', 'misc'], {}, {class: 'form-control col-1'} %>
+  <%= text_field :service, :poster, class: 'form-control' %>
+
+  <%= label :service, :description, 'Description', class: 'col-form-label' %>
+  <%= text_area :service, :description, class: 'form-control' %>
+
+  <%= label :service, :price, 'Price', class: 'col-form-label' %>
+  <%= number_field :service, :price, step: 0.01, class: 'form-control' %>
+
   <br/>
   <%= submit_tag 'Create Service Post', class: 'btn btn-primary' %>
   <%= link_to 'Cancel', services_path, class: 'btn btn-secondary' %>

@@ -1,0 +1,11 @@
+<h2>All Services</h2>
+
+<ul>
+  <% @services.each do |s| %>
+    <li>
+      <%= link_to s.title, service_path(s) %> — <%= number_to_currency(s.price) %> by <%= s.poster %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Create New Service', new_service_path, class: 'btn btn-primary' %>
