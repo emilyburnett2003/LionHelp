@@ -1,0 +1,28 @@
+<h2>Create New Review</h2>
+
+
+<%= form_tag reviews_path, class: 'form' do %>
+
+
+  <%= label :review, :vendor_name, 'Vendor', class: 'col-form-label' %>
+  <%= text_field :review, :vendor_name, class: 'form-control' %>
+
+
+  <%= label :review, :title, 'what service did they provide', class: 'col-form-label' %>
+  <%= text_area :review, :title, class: 'form-control' %>
+
+
+  <%= label :review, :comment, 'Review', class: 'col-form-label' %>
+  <%= text_area :review, :comment, class: 'form-control' %>
+
+
+
+
+  <%= label :review, :rating, 'Rating out of 10', class: 'col-form-label' %>
+  <%= number_field :review, :rating, step: 0.01, class: 'form-control' %>
+
+
+  <br/>
+  <%= submit_tag 'Create Review', class: 'btn btn-primary' %>
+  <%= link_to 'Cancel', reviews_path, class: 'btn btn-secondary' %>
+<% end %>
