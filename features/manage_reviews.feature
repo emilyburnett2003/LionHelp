@@ -24,4 +24,18 @@ Scenario: Show reviews for Barbara Reddington
     Given I am on the show_vendor_review page for 4
     Then I should see comments like: They were so rude to me., They were late to the appointment., The nail design was not like the picture I showed.
 
+Scenario: Delete a review
+  Given the following review exists:
+    | vendor_name  | title     | comment                    | rating |
+    | Hannah Lasso | Furniture | Personally delivered to me. | 4      |
+  When I delete the review "Hannah Lasso", "Furniture", "Personally delivered to me.", "4"
+  Then I should see "Review deleted."
 
+Scenario: Create a new review
+  Given I am on the review page
+  When I fill in "Vendor" with "Hannah Lasso"
+  And I fill in "what service did they provide" with "Furniture"
+  And I fill in "Review" with "Personally delivered to me."
+  And I fill in "Rating out of 10" with "4"
+  And I press "Create Review"
+  Then I should see "review posted successfully!"
