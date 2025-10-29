@@ -17,11 +17,11 @@
 
 # --- Create Reviews ---
 reviews = [
-    { vendorId: 1, vendorName: 'John', title: 'Manicure', rating: 5, comment: 'My nails look amazing!' },
-    { vendorId: 2, vendorName: 'Kathy' title: 'Meal Swipes', rating: 4, comment: 'Super nice person' },
-    { vendorId: 1, vendorName: 'John' title: 'Tutoring', rating: 5, comment: 'The best tutor I’ve ever had.' },
-    { vendorId: 3, vendorName: 'Kathy' title: 'Meal Swipes', rating: 1, comment: 'They ghosted me.' },
-    { vendorId: 4, vendorName: 'Hannah' title: 'Furniture', rating: 4, comment: 'Personally delivered to me.' }
+    { vendor_id: 1, vendor_name: 'John', title: 'Manicure', rating: 5, comment: 'My nails look amazing!' },
+    { vendor_id: 2, vendor_name: 'Kathy', title: 'Meal Swipes', rating: 4, comment: 'Super nice person' },
+    { vendor_id: 1, vendor_name: 'John', title: 'Tutoring', rating: 5, comment: 'The best tutor I’ve ever had.' },
+    { vendor_id: 2, vendor_name: 'Kathy', title: 'Meal Swipes', rating: 1, comment: 'They ghosted me.' },
+    { vendor_id: 3, vendor_name: 'Hannah', title: 'Furniture', rating: 4, comment: 'Personally delivered to me.' }
 ]
 
 reviews.each do |review|
