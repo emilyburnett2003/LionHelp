@@ -47,5 +47,6 @@ bundle exec rackup --port <PORT_NUM>
 - To view all reviews of a single vendor based on their id number: `/reviews/{vendor_id}`
 
 ## To Test Locally
-- To test user stories through Cucumber: run the following
-`bundle exec rspec`
+- To execute RSpec tests, run `bundle exec rspec`
+- To execute user stories through Cucumber, run `bundle exec cucumber`
+- Note: These commands need to run in the project's directory.
