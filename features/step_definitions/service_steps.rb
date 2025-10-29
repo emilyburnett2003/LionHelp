@@ -28,7 +28,7 @@ end
 When('I delete the service {string}') do |title|
   service = Service.find_by(title: title)
   visit service_path(service)
-  click_link 'Delete' # assuming you have a Delete link on the show page
+  click_link 'Delete'
 end
 
 Then('I should not see {string}') do |text|
