@@ -46,7 +46,8 @@ bundle exec rackup --port <PORT_NUM>
 ### Review Feature [TODO]
 - To view all reviews in the database: `/reviews`
 - To view all reviews of a single vendor based on their id number: `/reviews/{vendor_id}`
-
+- To create an new review press button the "Write a review" button one `/reviews/new`
+- To Delete the "delete" next to a review to delete it 
 ## To Test Locally
 - To execute RSpec tests, run `bundle exec rspec`
 - To execute user stories through Cucumber, run `bundle exec cucumber`
