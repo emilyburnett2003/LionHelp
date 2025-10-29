@@ -41,8 +41,8 @@ bundle exec rackup --port <PORT_NUM>
 
 ## Available Routes
 ### Service Feature [TODO]
-- To view a specific service based on its id number: '/services/{service_id}'
-- To create a new service: '/services/new'
+- To view a specific service based on its id number: `/services/{service_id}`
+- To create a new service: `/services/new`
 ### Review Feature [TODO]
 - To view all reviews in the database: `/reviews`
 - To view all reviews of a single vendor based on their id number: `/reviews/{vendor_id}`
