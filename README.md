@@ -40,7 +40,7 @@ bundle exec rackup --port <PORT_NUM>
 7. Visit `localhost:<PORT_NUM>` in your browser to see the webapp
 
 ## Available Routes
-### Service Feature [TODO]
+### Service Feature 
 - To view a specific service based on its id number: `/services/{service_id}`
 - To create a new service: `/services/new`
 ### Review Feature [TODO]

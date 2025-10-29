@@ -3187,3 +3187,279 @@ Processing by ServicesController#index as HTML
   Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
 Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "reviews"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "vendor_id" integer, "vendor_name" text, "title" text, "rating" integer, "comment" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "services"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "services" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "price" decimal, "poster" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20251029012109)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20251028101808);[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2025-10-29 22:45:56.460657', '2025-10-29 22:45:56.460658') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', 'ec4c47fead971720af76d3ba76a6399cf9385d0d', '2025-10-29 22:45:56.461033', '2025-10-29 22:45:56.461033') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("vendor_id", "vendor_name", "title", "rating", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["vendor_id", 3], ["vendor_name", "Hannah Lasso"], ["title", "Furniture"], ["rating", 4], ["comment", "Personally delivered to me."], ["created_at", "2025-10-29 22:45:56.724461"], ["updated_at", "2025-10-29 22:45:56.724461"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("vendor_id", "vendor_name", "title", "rating", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["vendor_id", 3], ["vendor_name", "Hannah Lasso"], ["title", "Furniture"], ["rating", 3], ["comment", "My chair had a scratch on the back."], ["created_at", "2025-10-29 22:45:56.725235"], ["updated_at", "2025-10-29 22:45:56.725235"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("vendor_id", "vendor_name", "title", "rating", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["vendor_id", 3], ["vendor_name", "Hannah Lasso"], ["title", "Furniture"], ["rating", 5], ["comment", "Was really friendly."], ["created_at", "2025-10-29 22:45:56.725733"], ["updated_at", "2025-10-29 22:45:56.725733"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("vendor_id", "vendor_name", "title", "rating", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["vendor_id", 3], ["vendor_name", "Hannah Lasso"], ["title", "Furniture"], ["rating", 5], ["comment", "Sold at a really good price"], ["created_at", "2025-10-29 22:45:56.726096"], ["updated_at", "2025-10-29 22:45:56.726096"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("vendor_id", "vendor_name", "title", "rating", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["vendor_id", 4], ["vendor_name", "Barbara Reddington"], ["title", "Manicure"], ["rating", 1], ["comment", "The nail design was not like the picture I showed."], ["created_at", "2025-10-29 22:45:56.726472"], ["updated_at", "2025-10-29 22:45:56.726472"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("vendor_id", "vendor_name", "title", "rating", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["vendor_id", 4], ["vendor_name", "Barbara Reddington"], ["title", "Manicure"], ["rating", 2], ["comment", "They were late to the appointment."], ["created_at", "2025-10-29 22:45:56.726840"], ["updated_at", "2025-10-29 22:45:56.726840"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("vendor_id", "vendor_name", "title", "rating", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["vendor_id", 4], ["vendor_name", "Barbara Reddington"], ["title", "Manicure"], ["rating", 1], ["comment", "They were so rude to me."], ["created_at", "2025-10-29 22:45:56.727209"], ["updated_at", "2025-10-29 22:45:56.727209"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/reviews" for 127.0.0.1 at 2025-10-29 18:45:56 -0400
+Processing by ReviewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 93.1ms | GC: 41.1ms)
+Completed 200 OK in 106ms (Views: 95.7ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 41.1ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("vendor_id", "vendor_name", "title", "rating", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["vendor_id", 3], ["vendor_name", "Hannah Lasso"], ["title", "Furniture"], ["rating", 4], ["comment", "Personally delivered to me."], ["created_at", "2025-10-29 22:45:56.859957"], ["updated_at", "2025-10-29 22:45:56.859957"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("vendor_id", "vendor_name", "title", "rating", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["vendor_id", 3], ["vendor_name", "Hannah Lasso"], ["title", "Furniture"], ["rating", 3], ["comment", "My chair had a scratch on the back."], ["created_at", "2025-10-29 22:45:56.860597"], ["updated_at", "2025-10-29 22:45:56.860597"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("vendor_id", "vendor_name", "title", "rating", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["vendor_id", 3], ["vendor_name", "Hannah Lasso"], ["title", "Furniture"], ["rating", 5], ["comment", "Was really friendly."], ["created_at", "2025-10-29 22:45:56.860983"], ["updated_at", "2025-10-29 22:45:56.860983"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("vendor_id", "vendor_name", "title", "rating", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["vendor_id", 3], ["vendor_name", "Hannah Lasso"], ["title", "Furniture"], ["rating", 5], ["comment", "Sold at a really good price"], ["created_at", "2025-10-29 22:45:56.861367"], ["updated_at", "2025-10-29 22:45:56.861367"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("vendor_id", "vendor_name", "title", "rating", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["vendor_id", 4], ["vendor_name", "Barbara Reddington"], ["title", "Manicure"], ["rating", 1], ["comment", "The nail design was not like the picture I showed."], ["created_at", "2025-10-29 22:45:56.861724"], ["updated_at", "2025-10-29 22:45:56.861724"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("vendor_id", "vendor_name", "title", "rating", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["vendor_id", 4], ["vendor_name", "Barbara Reddington"], ["title", "Manicure"], ["rating", 2], ["comment", "They were late to the appointment."], ["created_at", "2025-10-29 22:45:56.862081"], ["updated_at", "2025-10-29 22:45:56.862081"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("vendor_id", "vendor_name", "title", "rating", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["vendor_id", 4], ["vendor_name", "Barbara Reddington"], ["title", "Manicure"], ["rating", 1], ["comment", "They were so rude to me."], ["created_at", "2025-10-29 22:45:56.862433"], ["updated_at", "2025-10-29 22:45:56.862433"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/vendor_reviews/4" for 127.0.0.1 at 2025-10-29 18:45:56 -0400
+Processing by ReviewsController#show_vendor_reviews as HTML
+  Parameters: {"vendor_id"=>"4"}
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."vendor_id" = ?[0m  [["vendor_id", 4]]
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/show_vendor_reviews.html.erb within layouts/application
+  Rendered reviews/show_vendor_reviews.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("vendor_id", "vendor_name", "title", "rating", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["vendor_id", 3], ["vendor_name", "Hannah Lasso"], ["title", "Furniture"], ["rating", 4], ["comment", "Personally delivered to me."], ["created_at", "2025-10-29 22:45:56.868182"], ["updated_at", "2025-10-29 22:45:56.868182"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("vendor_id", "vendor_name", "title", "rating", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["vendor_id", 3], ["vendor_name", "Hannah Lasso"], ["title", "Furniture"], ["rating", 3], ["comment", "My chair had a scratch on the back."], ["created_at", "2025-10-29 22:45:56.868685"], ["updated_at", "2025-10-29 22:45:56.868685"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("vendor_id", "vendor_name", "title", "rating", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["vendor_id", 3], ["vendor_name", "Hannah Lasso"], ["title", "Furniture"], ["rating", 5], ["comment", "Was really friendly."], ["created_at", "2025-10-29 22:45:56.869069"], ["updated_at", "2025-10-29 22:45:56.869069"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("vendor_id", "vendor_name", "title", "rating", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["vendor_id", 3], ["vendor_name", "Hannah Lasso"], ["title", "Furniture"], ["rating", 5], ["comment", "Sold at a really good price"], ["created_at", "2025-10-29 22:45:56.869426"], ["updated_at", "2025-10-29 22:45:56.869426"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("vendor_id", "vendor_name", "title", "rating", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["vendor_id", 4], ["vendor_name", "Barbara Reddington"], ["title", "Manicure"], ["rating", 1], ["comment", "The nail design was not like the picture I showed."], ["created_at", "2025-10-29 22:45:56.869878"], ["updated_at", "2025-10-29 22:45:56.869878"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("vendor_id", "vendor_name", "title", "rating", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["vendor_id", 4], ["vendor_name", "Barbara Reddington"], ["title", "Manicure"], ["rating", 2], ["comment", "They were late to the appointment."], ["created_at", "2025-10-29 22:45:56.870333"], ["updated_at", "2025-10-29 22:45:56.870333"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("vendor_id", "vendor_name", "title", "rating", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["vendor_id", 4], ["vendor_name", "Barbara Reddington"], ["title", "Manicure"], ["rating", 1], ["comment", "They were so rude to me."], ["created_at", "2025-10-29 22:45:56.870715"], ["updated_at", "2025-10-29 22:45:56.870715"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("vendor_name", "title", "rating", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["vendor_name", "Hannah Lasso"], ["title", "Furniture"], ["rating", 4], ["comment", "Personally delivered to me."], ["created_at", "2025-10-29 22:45:56.871141"], ["updated_at", "2025-10-29 22:45:56.871141"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."vendor_name" = ? AND "reviews"."title" = ? AND "reviews"."comment" = ? AND "reviews"."rating" = ? LIMIT ?[0m  [["vendor_name", "Hannah Lasso"], ["title", "Furniture"], ["comment", "Personally delivered to me."], ["rating", 4], ["LIMIT", 1]]
+Started GET "/reviews" for 127.0.0.1 at 2025-10-29 18:45:56 -0400
+Processing by ReviewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.0ms)
+Started DELETE "/reviews/1" for 127.0.0.1 at 2025-10-29 18:45:56 -0400
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Destroy (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/reviews
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+Started GET "/reviews" for 127.0.0.1 at 2025-10-29 18:45:56 -0400
+Processing by ReviewsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("vendor_id", "vendor_name", "title", "rating", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["vendor_id", 3], ["vendor_name", "Hannah Lasso"], ["title", "Furniture"], ["rating", 4], ["comment", "Personally delivered to me."], ["created_at", "2025-10-29 22:45:56.884228"], ["updated_at", "2025-10-29 22:45:56.884228"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("vendor_id", "vendor_name", "title", "rating", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["vendor_id", 3], ["vendor_name", "Hannah Lasso"], ["title", "Furniture"], ["rating", 3], ["comment", "My chair had a scratch on the back."], ["created_at", "2025-10-29 22:45:56.884756"], ["updated_at", "2025-10-29 22:45:56.884756"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("vendor_id", "vendor_name", "title", "rating", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["vendor_id", 3], ["vendor_name", "Hannah Lasso"], ["title", "Furniture"], ["rating", 5], ["comment", "Was really friendly."], ["created_at", "2025-10-29 22:45:56.885125"], ["updated_at", "2025-10-29 22:45:56.885125"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("vendor_id", "vendor_name", "title", "rating", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["vendor_id", 3], ["vendor_name", "Hannah Lasso"], ["title", "Furniture"], ["rating", 5], ["comment", "Sold at a really good price"], ["created_at", "2025-10-29 22:45:56.885483"], ["updated_at", "2025-10-29 22:45:56.885483"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("vendor_id", "vendor_name", "title", "rating", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["vendor_id", 4], ["vendor_name", "Barbara Reddington"], ["title", "Manicure"], ["rating", 1], ["comment", "The nail design was not like the picture I showed."], ["created_at", "2025-10-29 22:45:56.885835"], ["updated_at", "2025-10-29 22:45:56.885835"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("vendor_id", "vendor_name", "title", "rating", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["vendor_id", 4], ["vendor_name", "Barbara Reddington"], ["title", "Manicure"], ["rating", 2], ["comment", "They were late to the appointment."], ["created_at", "2025-10-29 22:45:56.886199"], ["updated_at", "2025-10-29 22:45:56.886199"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("vendor_id", "vendor_name", "title", "rating", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["vendor_id", 4], ["vendor_name", "Barbara Reddington"], ["title", "Manicure"], ["rating", 1], ["comment", "They were so rude to me."], ["created_at", "2025-10-29 22:45:56.886545"], ["updated_at", "2025-10-29 22:45:56.886545"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/reviews/new" for 127.0.0.1 at 2025-10-29 18:45:56 -0400
+Processing by ReviewsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+Started POST "/reviews" for 127.0.0.1 at 2025-10-29 18:45:56 -0400
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "review"=>{"vendor_name"=>"Hannah Lasso", "title"=>"Furniture", "comment"=>"Personally delivered to me.", "rating"=>"4"}, "commit"=>"Create Review"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("vendor_name", "title", "rating", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["vendor_name", "Hannah Lasso"], ["title", "Furniture"], ["rating", 4], ["comment", "Personally delivered to me."], ["created_at", "2025-10-29 22:45:56.894078"], ["updated_at", "2025-10-29 22:45:56.894078"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/reviews.8
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+Started GET "/reviews.8" for 127.0.0.1 at 2025-10-29 18:45:56 -0400
+Processing by ReviewsController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+Started GET "/services/new" for 127.0.0.1 at 2025-10-29 18:45:56 -0400
+Processing by ServicesController#new as HTML
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  Rendering layout layouts/application.html.erb
+  Rendering services/new.html.erb within layouts/application
+  Rendered services/new.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 1.3ms | ActiveRecord: 0.3ms (0 queries, 0 cached) | GC: 4.4ms)
+Started POST "/services" for 127.0.0.1 at 2025-10-29 18:45:56 -0400
+Processing by ServicesController#create as HTML
+  Parameters: {"utf8"=>"✓", "service"=>{"title"=>"Laundry Help", "poster"=>"Emily", "description"=>"Need help folding laundry", "price"=>"15.00"}, "commit"=>"Create Service Post"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mService Create (0.1ms)[0m  [1m[32mINSERT INTO "services" ("title", "description", "price", "poster", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Laundry Help"], ["description", "Need help folding laundry"], ["price", 15.0], ["poster", "Emily"], ["created_at", "2025-10-29 22:45:56.913762"], ["updated_at", "2025-10-29 22:45:56.913762"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/services/1
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+Started GET "/services/1" for 127.0.0.1 at 2025-10-29 18:45:56 -0400
+Processing by ServicesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mService Load (0.0ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering services/show.html.erb within layouts/application
+  Rendered services/show.html.erb within layouts/application (Duration: 3.7ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.3ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mService Create (0.1ms)[0m  [1m[32mINSERT INTO "services" ("title", "description", "price", "poster", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Laundry Help"], ["description", "Need help folding laundry"], ["price", 15.0], ["poster", "Emily"], ["created_at", "2025-10-29 22:45:56.922460"], ["updated_at", "2025-10-29 22:45:56.922460"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mService Load (0.0ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."title" = ? LIMIT ?[0m  [["title", "Laundry Help"], ["LIMIT", 1]]
+Started GET "/services/1" for 127.0.0.1 at 2025-10-29 18:45:56 -0400
+Processing by ServicesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mService Load (0.0ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering services/show.html.erb within layouts/application
+  Rendered services/show.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mService Create (0.1ms)[0m  [1m[32mINSERT INTO "services" ("title", "description", "price", "poster", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Laundry Help"], ["description", "Need help folding laundry"], ["price", 15.0], ["poster", "Emily"], ["created_at", "2025-10-29 22:45:56.926383"], ["updated_at", "2025-10-29 22:45:56.926383"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mService Load (0.0ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."title" = ? LIMIT ?[0m  [["title", "Laundry Help"], ["LIMIT", 1]]
+Started GET "/services/1" for 127.0.0.1 at 2025-10-29 18:45:56 -0400
+Processing by ServicesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mService Load (0.0ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering services/show.html.erb within layouts/application
+  Rendered services/show.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | GC: 0.1ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.1ms)
+Started DELETE "/services/1" for 127.0.0.1 at 2025-10-29 18:45:56 -0400
+Processing by ServicesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mService Load (0.0ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mService Destroy (0.1ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/services
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+Started GET "/services" for 127.0.0.1 at 2025-10-29 18:45:56 -0400
+Processing by ServicesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering services/index.html.erb within layouts/application
+  [1m[36mService Load (0.0ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  Rendered services/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.1ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.1ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m

@@ -11,7 +11,7 @@ class ServicesController < ApplicationController
         @service = Service.new(service_params)
         if @service.save
           flash[:notice] = "Service created successfully!"
-          redirect_to service_path(@service)   # go to the show page instead of index
+          redirect_to service_path(@service) 
         else
           render :new
         end
