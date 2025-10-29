@@ -285,3 +285,239 @@ DEPRECATION WARNING: `to_time` will always preserve the receiver timezone rather
   [1m[36mActiveRecord::InternalMetadata Update (0.0ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2025-10-28 10:59:24.813632' WHERE "ar_internal_metadata"."key" = 'environment'[0m
   [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
   [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '1f03fb7938905f0889619998d72fc7603149bab4', '2025-10-28 10:59:24.813790', '2025-10-28 10:59:24.813790') RETURNING "key"[0m
+DEPRECATION WARNING: `to_time` will always preserve the receiver timezone rather than system local time in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <top (required)> at /Users/emilyburnett/LionHelp/config/environment.rb:5)
+Started GET "/services/new" for ::1 at 2025-10-28 07:07:06 -0400
+Processing by ServicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering services/new.html.erb within layouts/application
+  Rendered services/new.html.erb within layouts/application (Duration: 5.8ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 94.6ms | GC: 37.2ms)
+Completed 200 OK in 135ms (Views: 97.3ms | ActiveRecord: 10.2ms (0 queries, 0 cached) | GC: 37.2ms)
+
+
+Started POST "/services" for ::1 at 2025-10-28 07:07:23 -0400
+Processing by ServicesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Lkx_CrWE9Ni_GyEdBhLTP5VjvWXYlUQHEIszJUcV7gv7jcfHtOvXr24VNvLjxrgddjg7MPF9SIYAGvm0kkDDcA", "service"=>{"title"=>"service 1", "poster"=>"emily", "description"=>"service 1 desc", "price"=>"10"}, "commit"=>"Create Service Post"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mService Create (0.7ms)[0m  [1m[32mINSERT INTO "services" ("title", "description", "price", "poster", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "service 1"], ["description", "service 1 desc"], ["price", 10.0], ["poster", "emily"], ["created_at", "2025-10-28 11:07:23.226676"], ["updated_at", "2025-10-28 11:07:23.226676"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+Redirected to http://localhost:3000/services/2
+Completed 302 Found in 5ms (ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/services/2" for ::1 at 2025-10-28 07:07:23 -0400
+Processing by ServicesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering services/show.html.erb within layouts/application
+  Rendered services/show.html.erb within layouts/application (Duration: 3.6ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 6.3ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/services" for ::1 at 2025-10-28 07:07:24 -0400
+Processing by ServicesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering services/index.html.erb within layouts/application
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  Rendered services/index.html.erb within layouts/application (Duration: 6.3ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 13.8ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/services/2" for ::1 at 2025-10-28 07:07:26 -0400
+Processing by ServicesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering services/show.html.erb within layouts/application
+  Rendered services/show.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/services/2" for ::1 at 2025-10-28 07:07:29 -0400
+Processing by ServicesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"r2xEQglmr97Gxxa6632uIDUrKUNbMv1m1xe3UuCYNNR6rfyPCAmMqRfJAVUOqcUC1nCvFnLa8efHhn3DNc0Zrw", "id"=>"2"}
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+Redirected to http://localhost:3000/services
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/services" for ::1 at 2025-10-28 07:07:29 -0400
+Processing by ServicesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering services/index.html.erb within layouts/application
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  Rendered services/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | GC: 4.9ms)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 4.9ms)
+
+
+Started GET "/services/1" for ::1 at 2025-10-28 07:07:31 -0400
+Processing by ServicesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering services/show.html.erb within layouts/application
+  Rendered services/show.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | GC: 1.2ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 1.2ms)
+
+
+Started DELETE "/services/1" for ::1 at 2025-10-28 07:07:33 -0400
+Processing by ServicesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"s6KW7dncj02fs19-3XQVsZeShOrEYRsV7qwfADO4xbVmYy4g2LOsOk69SJE4oH6TdMkCv-2JF5T-PdWR5u3ozg", "id"=>"1"}
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mService Destroy (0.2ms)[0m  [1m[31mDELETE FROM "services" WHERE "services"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+Redirected to http://localhost:3000/services
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/services" for ::1 at 2025-10-28 07:07:33 -0400
+Processing by ServicesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering services/index.html.erb within layouts/application
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  Rendered services/index.html.erb within layouts/application (Duration: 2.1ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | GC: 0.5ms)
+Completed 200 OK in 14ms (Views: 13.8ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/services/new" for ::1 at 2025-10-28 07:07:35 -0400
+Processing by ServicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering services/new.html.erb within layouts/application
+  Rendered services/new.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 8.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/services" for ::1 at 2025-10-28 07:07:44 -0400
+Processing by ServicesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zB1j_SIB9pq2j1nKBIYoBew4XaG5jSSgYxfbxYXO78IZ3NswI27V7WeBTiXhUkMnD2Pb9JBlKCFzhhFUUJvCuQ", "service"=>{"title"=>"service 1", "poster"=>"emily", "description"=>"desc of service 1", "price"=>"23"}, "commit"=>"Create Service Post"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mService Create (0.6ms)[0m  [1m[32mINSERT INTO "services" ("title", "description", "price", "poster", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "service 1"], ["description", "desc of service 1"], ["price", 23.0], ["poster", "emily"], ["created_at", "2025-10-28 11:07:44.795567"], ["updated_at", "2025-10-28 11:07:44.795567"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+Redirected to http://localhost:3000/services/3
+Completed 302 Found in 5ms (ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/services/3" for ::1 at 2025-10-28 07:07:44 -0400
+Processing by ServicesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering services/show.html.erb within layouts/application
+  Rendered services/show.html.erb within layouts/application (Duration: 0.4ms | GC: 0.2ms)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | GC: 5.9ms)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 8.0ms)
+
+
+Started GET "/services" for ::1 at 2025-10-28 07:07:46 -0400
+Processing by ServicesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering services/index.html.erb within layouts/application
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  Rendered services/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | GC: 4.7ms)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 5.6ms)
+
+
+Started GET "/services/3" for ::1 at 2025-10-28 07:07:47 -0400
+Processing by ServicesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering services/show.html.erb within layouts/application
+  Rendered services/show.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | GC: 1.0ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 1.0ms)
+
+
+DEPRECATION WARNING: `to_time` will always preserve the receiver timezone rather than system local time in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <top (required)> at /Users/emilyburnett/LionHelp/config/environment.rb:5)
+Started GET "/" for ::1 at 2025-10-29 08:34:13 -0400
+Processing by ServicesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering services/index.html.erb within layouts/application
+  [1m[36mService Load (5.0ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  Rendered services/index.html.erb within layouts/application (Duration: 14.7ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 102.2ms | GC: 32.9ms)
+Completed 200 OK in 132ms (Views: 96.0ms | ActiveRecord: 8.7ms (1 query, 0 cached) | GC: 33.0ms)
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2025-10-29 08:34:13 -0400
+Started GET "/services/3" for ::1 at 2025-10-29 08:34:15 -0400
+Processing by ServicesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering services/show.html.erb within layouts/application
+  Rendered services/show.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 5.9ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/services" for ::1 at 2025-10-29 08:35:04 -0400
+Processing by ServicesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering services/index.html.erb within layouts/application
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  Rendered services/index.html.erb within layouts/application (Duration: 3.2ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/services/new" for ::1 at 2025-10-29 08:35:04 -0400
+Processing by ServicesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering services/new.html.erb within layouts/application
+  Rendered services/new.html.erb within layouts/application (Duration: 9.4ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/services" for ::1 at 2025-10-29 08:35:20 -0400
+Processing by ServicesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering services/index.html.erb within layouts/application
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  Rendered services/index.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/services/3" for ::1 at 2025-10-29 08:35:21 -0400
+Processing by ServicesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering services/show.html.erb within layouts/application
+  Rendered services/show.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layouts/_flash.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | GC: 0.6ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.6ms)
+
+
