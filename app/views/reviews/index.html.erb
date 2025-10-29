@@ -1,0 +1,12 @@
+<h2>Reviews</h2>
+
+<ul>
+<% @reviews.each do |review| %>
+    <li>
+    <strong>Vendor Name:</strong> <%= review.vendor_name %><br>
+    <strong>Service:</strong> <%= review.title %><br>
+    <strong>Rating:</strong> <%= review.rating %><br>
+    <strong>Comment:</strong> <%= review.comment %>
+    </li>
+<% end %>
+</ul>

@@ -1,0 +1,11 @@
+<h2><%= @vendor_reviews.first.vendor_name %></h2>
+
+<ul>
+<% @vendor_reviews.each do |review| %>
+    <li>
+    <strong>Service:</strong> <%= review.title %><br>
+    <strong>Rating:</strong> <%= review.rating %><br>
+    <strong>Comment:</strong> <%= review.comment %>
+    </li>
+<% end %>
+</ul>
