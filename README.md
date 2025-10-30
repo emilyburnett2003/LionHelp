@@ -1,5 +1,8 @@
 # Lion Help: *building community, one service at a time*
 
+# Heroku: 
+  https://lionhelp-fdee920ef07c.herokuapp.com/
+
 ## Students
 - Kristine Pham (klp2157)
 - Emily Burnett (eb3425)
