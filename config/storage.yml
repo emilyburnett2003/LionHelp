@@ -1,0 +1,11 @@
+# Local storage (for development and test)
+local:
+  service: Disk
+  root: <%= Rails.root.join("storage") %>
+
+# Cloud storage (for production, e.g., Heroku)
+# You can use Amazon S3, Google Cloud, or local disk temporarily.
+# For now, we’ll use local disk to keep it simple.
+production:
+  service: Disk
+  root: <%= Rails.root.join("storage") %>
