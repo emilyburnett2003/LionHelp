@@ -34,3 +34,13 @@ end
 Then('I should not see {string}') do |text|
   expect(page).not_to have_content(text)
 end
+
+Given('the following services exist:') do |table|
+  table.hashes.each do |service|
+    Service.create!(service)
+  end
+end
+
+When('I go to the home page') do
+  visit root_path
+end

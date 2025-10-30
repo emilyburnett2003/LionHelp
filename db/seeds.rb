@@ -1,19 +1,24 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed (or created alongside the db with db:setup).
 
-# --- Create Services ---
-# services = [
-#     { name: 'Facial Treatment', description: 'Hydrating and cleansing facial to refresh skin.', price: 75.0 },
-#     { name: 'Deep Tissue Massage', description: 'Relieves chronic muscle tension and stress.', price: 120.0 },
-#     { name: 'Aromatherapy Massage', description: 'Massage combined with essential oils for relaxation.', price: 90.0 },
-#     { name: 'Hair Styling', description: 'Professional hair styling and treatment.', price: 60.0 }
-# ]
+# --- Create Columbia Student Services ---
+services = [
+  { title: 'Meal Swipes', poster: 'Kathy Lee', description: 'Selling meal swipes! Can meet at Lerner or JJ’s.', price: 9.00 },
+  { title: 'Tutoring – COMS W1004', poster: 'John Doe', description: 'One-hour tutoring sessions for Java/Python intro CS. Experienced TA.', price: 25.00 },
+  { title: 'Dorm Cleaning', poster: 'Janine Abbott', description: 'Will deep-clean your Carman or EC suite.', price: 40.00 },
+  { title: 'Furniture Pickup', poster: 'Hannah Lasso', description: 'Selling gently used IKEA desk and chair. Can deliver anywhere on campus.', price: 60.00 },
+  { title: 'Print Station Helper', poster: 'Sam Patel', description: 'Trouble printing in Butler or Mudd? I’ll meet you and help debug it.', price: 5.00 },
+  { title: 'Resume Review & Interview Prep', poster: 'Emily Chen', description: 'Peer review of CS and engineering resumes. Includes mock interviews.', price: 30.00 },
+  { title: 'Bike Rentals Around Campus', poster: 'Lina Morales', description: 'Rent my foldable bike for quick trips around Morningside Heights.', price: 15.00 },
+  { title: 'Laundry Folding Service', poster: 'Maya Brooks', description: 'I’ll fold and organize your washed clothes for you. Pickup from John Jay.', price: 12.00 },
+  { title: 'Headshots for LinkedIn', poster: 'Chris Ramos', description: 'Quick professional headshots taken on Low Steps. DSLR + retouching included.', price: 25.00 }
+]
 
-# services.each do |service|
-#   Service.create!(service)
-# end
+services.each do |service|
+  Service.create!(service)
+end
 
-# puts "Created #{Service.count} services!"
+puts "Created #{Service.count} services!"
 
 # --- Create Reviews ---
 reviews = [
