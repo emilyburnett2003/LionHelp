@@ -1,0 +1,14 @@
+<h2>Login</h2>
+
+
+<%= form_tag accounts_path, class: 'form' do %>
+
+  <%= label :user_account, :email, 'Email', class: 'col-form-label' %>
+  <%= text_field :user_account, :email, class: 'form-control', required: true %>
+
+
+  <%= label :user_account, :password, 'Password', class: 'col-form-label' %>
+  <%= password_field :user_account, :password, class: 'form-control', required: true %>
+  <br/>
+  <%= submit_tag 'Login', class: 'btn btn-primary' %>
+<% end %>
