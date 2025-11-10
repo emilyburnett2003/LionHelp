@@ -1,4 +1,5 @@
-<h2>All Services</h2>
+<h2>Welcome, <%= @user_name %></h2>
+<h3>All Services</h3>
 
 <ul>
   <% @services.each do |s| %>
@@ -10,3 +11,4 @@
 
 <%= link_to 'Create New Service', new_service_path, class: 'btn btn-primary' %>
 <%= link_to 'Reviews', reviews_path, class: 'btn btn-primary' %>
+<%= link_to 'Logout', logout_path, class: 'btn btn-outline-secondary' %>

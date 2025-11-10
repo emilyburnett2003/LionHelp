@@ -4,6 +4,7 @@
 <h2>Reviews You Made</h2>
 
 <%= link_to 'Write a New Review', new_review_path, class: 'btn btn-primary' %>
+<%= link_to 'Services', services_path, class: 'btn btn-primary' %>
 <ul>
 <% @reviews.each do |review| %>
   <li id="review_<%= review.id %>">

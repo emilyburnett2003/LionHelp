@@ -5,6 +5,7 @@ class ServicesController < ApplicationController
 
     def index
         @services = Service.all
+        @user_name = session[:user_name]
       end
   
     def create
@@ -25,7 +26,7 @@ class ServicesController < ApplicationController
       @service = Service.find(params[:id])
       @service.destroy
       flash[:notice] = "Service '#{@service.title}' deleted."
-      redirect_to services_path  
+      redirect_to services_path
     end
   
     private

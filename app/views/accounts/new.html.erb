@@ -1,0 +1,19 @@
+<h2>Create an Account</h2>
+
+
+<%= form_tag accounts_path, class: 'form' do %>
+
+  <%= label :user_account, :name, 'Name', class: 'col-form-label' %>
+  <%= text_field :user_account, :name, class: 'form-control', required: true %>
+
+  <%= label :user_account, :email, 'Email', class: 'col-form-label' %>
+  <%= text_field :user_account, :email, class: 'form-control', required: true %>
+
+
+  <%= label :user_account, :password, 'Password', class: 'col-form-label' %>
+  <%= password_field :user_account, :password, class: 'form-control', required: true %>
+
+  <br/>
+  <%= submit_tag 'Create', class: 'btn btn-primary' %>
+  <%= link_to 'Cancel', accounts_path, class: 'btn btn-secondary' %>
+<% end %>
