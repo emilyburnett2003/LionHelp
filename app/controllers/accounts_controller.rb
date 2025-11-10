@@ -14,7 +14,7 @@ class AccountsController < ApplicationController
       flash[:notice] = "Incorrect password."
       redirect_to accounts_path
     else
-      redirect_to services_path
+      redirect_to services_path(user_name: user.name)
     end
   end
 

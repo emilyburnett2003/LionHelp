@@ -5,6 +5,7 @@ class ServicesController < ApplicationController
 
     def index
         @services = Service.all
+        @user_name = params[:user_name]
       end
   
     def create
