@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   get '/vendor_reviews/:vendor_id', to: 'reviews#show_vendor_reviews', as: 'vendor_reviews'
   resources :services
   resources :accounts
-  root 'services#index'
+  post '/login', to: 'accounts#login', as: 'login'
+  root 'accounts#index'
 end

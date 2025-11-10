@@ -1,8 +1,9 @@
 class AccountsController < ApplicationController
   def index
+  
   end
 
-  def create
+  def login
     email = account_params[:email]
     password = account_params[:password]
 
@@ -14,7 +15,8 @@ class AccountsController < ApplicationController
       flash[:notice] = "Incorrect password."
       redirect_to accounts_path
     else
-      redirect_to services_path(user_name: user.name)
+      session[:user_name] = user.name
+      redirect_to services_path
     end
   end
 
