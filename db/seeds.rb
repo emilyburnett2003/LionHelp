@@ -20,15 +20,15 @@ end
 
 puts "Created #{Service.count} services!"
 
-# --- Create Reviews ---
+# --- Create Reviews from client to vendor ---
 reviews = [
-    { client_id: 1, vendor_id: 1, vendor_name: 'John Doe', title: 'Manicure', rating: 5, comment: 'My nails look amazing!' },
+    { client_id: 2, vendor_id: 1, vendor_name: 'John Doe', title: 'Manicure', rating: 5, comment: 'My nails look amazing!' },
     { client_id: 1, vendor_id: 2, vendor_name: 'Kathy Lee', title: 'Meal Swipes', rating: 4, comment: 'Super nice person' },
-    { client_id: 2, vendor_id: 1, vendor_name: 'John Doe', title: 'Tutoring', rating: 5, comment: 'The best tutor I have ever had.' },
+    { client_id: 4, vendor_id: 1, vendor_name: 'John Doe', title: 'Tutoring', rating: 5, comment: 'The best tutor I have ever had.' },
     { client_id: 3, vendor_id: 2, vendor_name: 'Kathy Lee', title: 'Meal Swipes', rating: 1, comment: 'They ghosted me.' },
     { client_id: 1, vendor_id: 3, vendor_name: 'Hannah Lasso', title: 'Furniture', rating: 4, comment: 'Personally delivered to me.' },
     { client_id: 2, vendor_id: 3, vendor_name: 'Hannah Lasso', title: 'Furniture', rating: 3, comment: 'My chair had a scratch on the back.' },
-    { client_id: 3, vendor_id: 3, vendor_name: 'Hannah Lasso', title: 'Furniture', rating: 5, comment: 'Was really friendly.' },
+    { client_id: 5, vendor_id: 3, vendor_name: 'Hannah Lasso', title: 'Furniture', rating: 5, comment: 'Was really friendly.' },
     { client_id: 4, vendor_id: 3, vendor_name: 'Hannah Lasso', title: 'Furniture', rating: 5, comment: 'Sold at a really good price' },
 
     { client_id: 1, vendor_id: 4, vendor_name: 'Barbara Reddington', title: 'Manicure', rating: 1, comment: 'The nail design was not like the picture I showed.' },
@@ -36,7 +36,7 @@ reviews = [
     { client_id: 3, vendor_id: 4, vendor_name: 'Barbara Reddington', title: 'Manicure', rating: 1, comment: 'They were so rude to me.' },
 
     { client_id: 1, vendor_id: 5, vendor_name: 'Janine Abbott', title: 'Dorm Cleaning', rating: 5, comment: 'My room was super clean when I got back.' },
-    { client_id: 2, vendor_id: 5, vendor_name: 'Janine Abbott', title: 'Dorm Cleaning', rating: 5, comment: 'She left behind a scented candle that smelled really good.' },
+    { client_id: 4, vendor_id: 5, vendor_name: 'Janine Abbott', title: 'Dorm Cleaning', rating: 5, comment: 'She left behind a scented candle that smelled really good.' },
     { client_id: 3, vendor_id: 5, vendor_name: 'Janine Abbott', title: 'Tutoring', rating: 4, comment: 'She was super quick with her services.' }
 ]
 
@@ -47,3 +47,21 @@ end
 puts "Created #{Review.count} reviews!"
 
 # --- Create User Accounts ---
+accounts = [
+    { user_id: 1, name: 'John Doe', email: 'john@gmail.com' , password: 'password' },
+    { user_id: 2, name: 'Kathy Lee', email: 'kathy@gmail.com' , password: 'password' },
+    { user_id: 3, name: 'Hannah Lasso', email: 'hannah@gmail.com' , password: 'password' },
+    { user_id: 4, name: 'Barbara Reddington', email: 'barbara@gmail.com' , password: 'password' },
+    { user_id: 5, name: 'Janine Abbott', email: 'janine@gmail.com' , password: 'password' },
+    { user_id: 6, name: 'Sam Patel', email: 'sam@gmail.com' , password: 'password' },
+    { user_id: 7, name: 'Emily Chen', email: 'emily@gmail.com' , password: 'password' },
+    { user_id: 8, name: 'Lina Morales', email: 'lina@gmail.com' , password: 'password' },
+    { user_id: 9, name: 'Maya Brooks', email: 'maya@gmail.com' , password: 'password' },
+    { user_id: 10, name: 'Chris Ramos', email: 'chris@gmail.com' , password: 'password' }
+]
+
+accounts.each do |account|
+  UserAccount.create!(account)
+end
+
+puts "Created #{UserAccount.count} accounts!"
