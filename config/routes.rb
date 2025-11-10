@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :services
   resources :accounts
   post '/login', to: 'accounts#login', as: 'login'
+  get '/logout', to: 'accounts#logout', as: 'logout'
   root 'accounts#index'
 end
