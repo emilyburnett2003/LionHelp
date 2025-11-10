@@ -14,6 +14,7 @@ services = [
   { vendor_id: 10, title: 'Headshots for LinkedIn', poster: 'Chris Ramos', description: 'Quick professional headshots taken on Low Steps. DSLR + retouching included.', price: 25.00 }
 ]
 
+Service.delete_all
 services.each do |service|
   Service.create!(service)
 end
@@ -40,6 +41,7 @@ reviews = [
     { client_id: 3, vendor_id: 5, vendor_name: 'Janine Abbott', title: 'Tutoring', rating: 4, comment: 'She was super quick with her services.' }
 ]
 
+Review.delete_all
 reviews.each do |review|
     Review.create!(review)
 end
@@ -59,7 +61,7 @@ accounts = [
     { user_id: 9, name: 'Maya Brooks', email: 'maya@gmail.com' , password: 'password' },
     { user_id: 10, name: 'Chris Ramos', email: 'chris@gmail.com' , password: 'password' }
 ]
-
+UserAccount.delete_all
 accounts.each do |account|
   UserAccount.create!(account)
 end
