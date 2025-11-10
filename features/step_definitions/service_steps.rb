@@ -41,6 +41,6 @@ Given('the following services exist:') do |table|
   end
 end
 
-When('I go to the home page') do
-  visit root_path
+When('I go to the services page') do
+  visit services_path
 end
