@@ -24,6 +24,8 @@ Scenario: Show all reviews
 Scenario: Show reviews for Barbara Reddington
     Given I am on the show_vendor_review page for 4
     Then I should see comments like: They were so rude to me., The nail design was not like the picture I showed.
+    Given I am on the show_client_review page for 4
+    Then I should see comments like: They were late to the appointment.
 
 Scenario: Delete a review
   Given the following review exists:

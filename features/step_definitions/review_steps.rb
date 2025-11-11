@@ -17,6 +17,12 @@ Given('I am on the show_vendor_review page for {int}') do |vendor_id|
     visit vendor_reviews_path(vendor_id)
 end
 
+Given('I am on the show_client_review page for {int}') do |client_id|
+  puts "Visiting path: #{client_reviews_path(client_id)}"
+  visit client_reviews_path(client_id)
+end
+
+
 Then(/^I should see comments like: (.*)$/) do |comment_list|
     comment_list.split(', ').each do |comment|
         expect(page).to have_text(comment.strip)
