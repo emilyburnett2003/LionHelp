@@ -39,6 +39,15 @@ class ReviewsController < ApplicationController
         end
     end
 
+    def show_client_reviews
+      client_id = params[:client_id]
+      @client_reviews = Review.client_reviews(client_id)
+      if @client_reviews.blank?
+          flash[:notice] = "'#{client_id}' has no reviews info"
+          redirect_to reviews_path
+      end
+  end
+
     
 end
 

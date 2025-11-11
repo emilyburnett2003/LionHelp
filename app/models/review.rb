@@ -1,6 +1,9 @@
 class Review < ActiveRecord::Base
     def self.vendor_reviews(vendor_id)
-        Review.where(vendor_id: vendor_id)
+        Review.where(vendor_id: vendor_id, reviewer: 'client')
+    end
+    def self.client_reviews(client_id)
+        Review.where(client_id: client_id, reviewer: 'vendor')
     end
 
 
