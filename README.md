@@ -1,6 +1,6 @@
 # Lion Help: *building community, one service at a time*
 
-# Heroku: 
+# Heroku:
   https://lionhelp-fdee920ef07c.herokuapp.com/
 
 ## Students
@@ -43,14 +43,19 @@ bundle exec rackup --port <PORT_NUM>
 7. Visit `localhost:<PORT_NUM>` in your browser to see the webapp
 
 ## Available Routes
-### Service Feature 
+### Login Feature
+The root page `/` is the login page. To login, use credientials that already exist in our UserAccount database. Otherwise, create a new account with an email that doesn't already exist by 1) pressing "Create an Account" button on the home page, or 2) going to `/new`
+
+### Service Feature
 - To view a specific service based on its id number: `/services/{service_id}`
 - To create a new service: `/services/new`
-### Review Feature [TODO]
+
+### Review Feature
 - To view all reviews in the database: `/reviews`
 - To view all reviews of a single vendor based on their id number: `/reviews/{vendor_id}`
-- To create an new review press button the "Write a review" button one `/reviews/new`
-- To Delete the "delete" next to a review to delete it 
+- To create an new review: press button the "Write a review" button or go to `/reviews/new`
+- To delete: click the "delete" next to a review to delete it
+
 ## To Test Locally
 - To execute RSpec tests, run `bundle exec rspec`
 - To execute user stories through Cucumber, run `bundle exec cucumber`

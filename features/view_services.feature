@@ -10,6 +10,6 @@ Feature: View all services
       | Tutoring – COMS W1004 | Personalized help with intro CS      | 25.00 | John Doe   |
 
   Scenario: Viewing the list of services
-    When I go to the home page
+    When I go to the services page
     Then I should see "Meal Swipes"
     And I should see "Tutoring – COMS W1004"
