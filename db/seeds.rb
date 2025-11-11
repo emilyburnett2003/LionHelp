@@ -31,9 +31,10 @@ reviews = [
     { client_id: 2, vendor_id: 3, vendor_name: 'Hannah Lasso', title: 'Furniture', rating: 3, comment: 'My chair had a scratch on the back.', reviewer: "client" },
     { client_id: 5, vendor_id: 3, vendor_name: 'Hannah Lasso', title: 'Furniture', rating: 5, comment: 'Was really friendly.', reviewer: "client" },
     { client_id: 4, vendor_id: 3, vendor_name: 'Hannah Lasso', title: 'Furniture', rating: 5, comment: 'Sold at a really good price', reviewer: "client" },
+    
 
     { client_id: 1, vendor_id: 4, vendor_name: 'Barbara Reddington', title: 'Manicure', rating: 1, comment: 'The nail design was not like the picture I showed.', reviewer: "client" },
-    { client_id: 2, vendor_id: 4, vendor_name: 'Barbara Reddington', title: 'Manicure', rating: 2, comment: 'They were late to the appointment.', reviewer: "vendor" },
+    { client_id: 4, vendor_id: 1, vendor_name: 'John Doe', title: 'Haircut', rating: 2, comment: 'They were late to the appointment.', reviewer: "vendor" },
     { client_id: 3, vendor_id: 4, vendor_name: 'Barbara Reddington', title: 'Manicure', rating: 1, comment: 'They were so rude to me.', reviewer: "client" },
 
     { client_id: 1, vendor_id: 5, vendor_name: 'Janine Abbott', title: 'Dorm Cleaning', rating: 5, comment: 'My room was super clean when I got back.', reviewer: "client" },
