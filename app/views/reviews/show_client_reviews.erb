@@ -1,0 +1,12 @@
+<h2>Client Reviews</h2>
+
+
+<ul>
+<% @client_reviews.each do |review| %>
+    <li>
+    <strong>Service:</strong> <%= review.title %><br>
+    <strong>Rating:</strong> <%= review.rating %><br>
+    <strong>Comment:</strong> <%= review.comment %>
+    </li>
+<% end %>
+</ul>
