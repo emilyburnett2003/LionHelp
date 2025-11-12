@@ -4,7 +4,7 @@
 <ul>
   <% @services.each do |s| %>
     <li>
-      <%= link_to s.title, service_path(s) %> — <%= number_to_currency(s.price) %> by <%= s.poster %>
+      <%= link_to s.title, service_path(s) %> — <%= number_to_currency(s.price) %> by <%= s.vendor_name %>
     </li>
   <% end %>
 </ul>

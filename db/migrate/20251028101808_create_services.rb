@@ -5,7 +5,7 @@ class CreateServices < ActiveRecord::Migration[8.0]
       t.string :title
       t.text :description
       t.decimal :price
-      t.string :poster
+      t.string :vendor_name
 
       t.timestamps
     end

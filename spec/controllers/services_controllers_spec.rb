@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe ServicesController, type: :controller do
   let(:valid_attributes) {
-    { title: "Laundry Help", description: "desc", price: 15.00, poster: "Emily" }
+    { title: "Laundry Help", description: "desc", price: 15.00, vendor_name: "Emily" }
   }
 
   describe "POST #create" do
