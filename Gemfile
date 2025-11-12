@@ -50,3 +50,5 @@ group :test do
 
   gem 'rails-controller-testing'
 end
+
+gem "simplecov-rspec", "~> 0.1", groups: [:development, :test]
