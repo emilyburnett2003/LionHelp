@@ -29,6 +29,10 @@ Then(/^I should see comments like:/) do |comment_table|
     end
 end
 
+Then('I should see notice {string}') do |notice|
+  expect(page).to have_content(notice)
+end
+
 Given('the following review exists:') do |table|
   table.hashes.each do |row|
     client = UserAccount.find_by(name: row['client_name']) || UserAccount.first
@@ -69,6 +73,10 @@ Given("I am on the review page") do
   visit new_review_path
 end
 
+Then("I should be on new review page") do
+  visit new_review_path
+end
+
 When(/^I select the reviewer type as "([^"]+)"$/) do |type|
   select type, from: "review_type"
 end
@@ -94,5 +102,5 @@ When(/^I submit the new review$/) do
 end
 
 Then(/^I should see the review success message$/) do
-  expect(page).to have_content("review posted successfully!")
+  expect(page).to have_content("Review posted successfully!")
 end

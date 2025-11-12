@@ -57,3 +57,30 @@ Scenario: Create a new review
   And I submit the new review
   Then I should see the review success message
 
+Scenario: Create a review with empty fields
+  Given I am on the new review page
+  And I submit the new review
+  Then I should be on new review page
+
+Scenario: I rate too high
+  Given I am on the new review page
+  When I select the reviewer type as "Client"
+  And I select the user being reviewed as "John Doe"
+  And I fill in the service provided with "Lion Help!"
+  And I fill in the review content with "Great service!"
+  And I fill in the review rating with "20"
+  And I submit the new review
+  Then I should see notice "Rating is too high."
+  Then I should be on new review page
+
+Scenario: I rate too low
+  Given I am on the new review page
+  When I select the reviewer type as "Client"
+  And I select the user being reviewed as "John Doe"
+  And I fill in the service provided with "Lion Help!"
+  And I fill in the review content with "Great service!"
+  And I fill in the review rating with "-10"
+  And I submit the new review
+  Then I should see notice "Rating is too low."
+  Then I should be on new review page
+
