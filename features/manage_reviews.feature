@@ -26,14 +26,19 @@ Given the following reviews exist:
 
 Scenario: Show all reviews
     Given I am on the review home page
-    Then I should see "Hannah Lasso" 4 times
-    Then I should see "Barbara Reddington" 2 times
+    Then I should see comments like:
+      | They were late to the appointment. |
+      | Personally delivered to me         |
+      | Sold at a really good price        |
 
 Scenario: Show reviews for Barbara Reddington
     Given I am on the show_vendor_review page for 4
-    Then I should see comments like: They were so rude to me., The nail design was not like the picture I showed.
+    Then I should see comments like:
+      | They were so rude to me.                           |
+      | The nail design was not like the picture I showed. |
     Given I am on the show_client_review page for 4
-    Then I should see comments like: They were late to the appointment.
+    Then I should see comments like:
+      | They were late to the appointment. |
 
 Scenario: Delete a review
   Given the following review exists:
