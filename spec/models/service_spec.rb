@@ -1,18 +1,33 @@
 require 'rails_helper'
 
 RSpec.describe Service, type: :model do
+  let(:valid_attributes) { { title: "Laundry Help", description: "Fold laundry", price: 15, poster: "Emily" } }
+
   it 'is valid with all attributes' do
-    service = Service.new(
-      title: "Laundry Help",
-      description: "Need help folding laundry",
-      price: 15.00,
-      poster: "Emily"
-    )
-    expect(service).to be_valid
+    expect(Service.new(valid_attributes)).to be_valid
   end
 
   it 'is invalid without a title' do
-    service = Service.new(description: "desc", price: 10, poster: "Emily")
+    service = Service.new(valid_attributes.except(:title))
     expect(service).not_to be_valid
+    expect(service.errors[:title]).to include("can't be blank")
+  end
+
+  it 'is invalid without a description' do
+    service = Service.new(valid_attributes.except(:description))
+    expect(service).not_to be_valid
+    expect(service.errors[:description]).to include("can't be blank")
+  end
+
+  it 'is invalid without a poster' do
+    service = Service.new(valid_attributes.except(:poster))
+    expect(service).not_to be_valid
+    expect(service.errors[:poster]).to include("can't be blank")
+  end
+
+  it 'is invalid with negative price' do
+    service = Service.new(valid_attributes.merge(price: -5))
+    expect(service).not_to be_valid
+    expect(service.errors[:price]).to include("must be greater than or equal to 0")
   end
 end
