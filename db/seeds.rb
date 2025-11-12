@@ -1,6 +1,26 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed (or created alongside the db with db:setup).
 
+# --- Create User Accounts ---
+accounts = [
+    { user_id: 1, name: 'John Doe', email: 'john@gmail.com' , password: 'password' },
+    { user_id: 2, name: 'Kathy Lee', email: 'kathy@gmail.com' , password: 'password' },
+    { user_id: 3, name: 'Hannah Lasso', email: 'hannah@gmail.com' , password: 'password' },
+    { user_id: 4, name: 'Barbara Reddington', email: 'barbara@gmail.com' , password: 'password' },
+    { user_id: 5, name: 'Janine Abbott', email: 'janine@gmail.com' , password: 'password' },
+    { user_id: 6, name: 'Sam Patel', email: 'sam@gmail.com' , password: 'password' },
+    { user_id: 7, name: 'Emily Chen', email: 'emily@gmail.com' , password: 'password' },
+    { user_id: 8, name: 'Lina Morales', email: 'lina@gmail.com' , password: 'password' },
+    { user_id: 9, name: 'Maya Brooks', email: 'maya@gmail.com' , password: 'password' },
+    { user_id: 10, name: 'Chris Ramos', email: 'chris@gmail.com' , password: 'password' }
+]
+UserAccount.delete_all
+accounts.each do |account|
+  UserAccount.create!(account)
+end
+
+puts "Created #{UserAccount.count} accounts!"
+
 # --- Create Columbia Student Services ---
 services = [
   { vendor_id: 2, title: 'Meal Swipes', poster: 'Kathy Lee', description: 'Selling meal swipes! Can meet at Lerner or JJ’s.', price: 9.00 },
@@ -49,22 +69,3 @@ end
 
 puts "Created #{Review.count} reviews!"
 
-# --- Create User Accounts ---
-accounts = [
-    { user_id: 1, name: 'John Doe', email: 'john@gmail.com' , password: 'password' },
-    { user_id: 2, name: 'Kathy Lee', email: 'kathy@gmail.com' , password: 'password' },
-    { user_id: 3, name: 'Hannah Lasso', email: 'hannah@gmail.com' , password: 'password' },
-    { user_id: 4, name: 'Barbara Reddington', email: 'barbara@gmail.com' , password: 'password' },
-    { user_id: 5, name: 'Janine Abbott', email: 'janine@gmail.com' , password: 'password' },
-    { user_id: 6, name: 'Sam Patel', email: 'sam@gmail.com' , password: 'password' },
-    { user_id: 7, name: 'Emily Chen', email: 'emily@gmail.com' , password: 'password' },
-    { user_id: 8, name: 'Lina Morales', email: 'lina@gmail.com' , password: 'password' },
-    { user_id: 9, name: 'Maya Brooks', email: 'maya@gmail.com' , password: 'password' },
-    { user_id: 10, name: 'Chris Ramos', email: 'chris@gmail.com' , password: 'password' }
-]
-UserAccount.delete_all
-accounts.each do |account|
-  UserAccount.create!(account)
-end
-
-puts "Created #{UserAccount.count} accounts!"
