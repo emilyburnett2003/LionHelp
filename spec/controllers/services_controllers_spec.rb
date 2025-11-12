@@ -6,13 +6,13 @@ RSpec.describe ServicesController, type: :controller do
       title: "Laundry Help",
       description: "Fold and organize laundry",
       price: 15.00,
-      poster: "Emily"
+      vendor_name: "Emily"
     }
   end
 
   let(:invalid_missing_title) { valid_attributes.except(:title) }
   let(:invalid_missing_description) { valid_attributes.except(:description) }
-  let(:invalid_missing_poster) { valid_attributes.except(:poster) }
+  let(:invalid_missing_vendor_name) { valid_attributes.except(:vendor_name) }
   let(:invalid_negative_price) { valid_attributes.merge(price: -5) }
 
   describe "GET #index" do
@@ -66,14 +66,14 @@ RSpec.describe ServicesController, type: :controller do
       end
     end
 
-    context "with missing poster" do
+    context "with missing vendor_name" do
       it "does not create service and re-renders new" do
         expect {
-          post :create, params: { service: invalid_missing_poster }
+          post :create, params: { service: invalid_missing_vendor_name }
         }.not_to change(Service, :count)
 
         expect(response).to render_template(:new)
-        expect(assigns(:service).errors[:poster]).to include("can't be blank")
+        expect(assigns(:service).errors[:vendor_name]).to include("can't be blank")
       end
     end
 
