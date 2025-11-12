@@ -3,16 +3,16 @@
 
 # --- Create User Accounts ---
 accounts = [
-    { user_id: 1, name: 'John Doe', email: 'john@gmail.com' , password: 'password' },
-    { user_id: 2, name: 'Kathy Lee', email: 'kathy@gmail.com' , password: 'password' },
-    { user_id: 3, name: 'Hannah Lasso', email: 'hannah@gmail.com' , password: 'password' },
-    { user_id: 4, name: 'Barbara Reddington', email: 'barbara@gmail.com' , password: 'password' },
-    { user_id: 5, name: 'Janine Abbott', email: 'janine@gmail.com' , password: 'password' },
-    { user_id: 6, name: 'Sam Patel', email: 'sam@gmail.com' , password: 'password' },
-    { user_id: 7, name: 'Emily Chen', email: 'emily@gmail.com' , password: 'password' },
-    { user_id: 8, name: 'Lina Morales', email: 'lina@gmail.com' , password: 'password' },
-    { user_id: 9, name: 'Maya Brooks', email: 'maya@gmail.com' , password: 'password' },
-    { user_id: 10, name: 'Chris Ramos', email: 'chris@gmail.com' , password: 'password' }
+    { user_id: 1, name: 'John Doe', email: 'jd1234@columbia.edu' , password: 'password' },
+    { user_id: 2, name: 'Kathy Lee', email: 'kl1234@columbia.edu' , password: 'password' },
+    { user_id: 3, name: 'Hannah Lasso', email: 'hl1234@barnard.edu' , password: 'password' },
+    { user_id: 4, name: 'Barbara Reddington', email: 'br1234@barnard.edu' , password: 'password' },
+    { user_id: 5, name: 'Janine Abbott', email: 'ja1234@barnard.edu' , password: 'password' },
+    { user_id: 6, name: 'Sam Patel', email: 'sp1234@columbia.edu' , password: 'password' },
+    { user_id: 7, name: 'Emily Chen', email: 'ec1234@columbia.edu' , password: 'password' },
+    { user_id: 8, name: 'Lina Morales', email: 'lm1234@columbia.edu' , password: 'password' },
+    { user_id: 9, name: 'Maya Brooks', email: 'mb1234@columbia.edu' , password: 'password' },
+    { user_id: 10, name: 'Chris Ramos', email: 'cr1234@columbia.edu' , password: 'password' }
 ]
 UserAccount.delete_all
 accounts.each do |account|
@@ -68,21 +68,3 @@ reviews.each do |review|
 end
 
 puts "Created #{Review.count} reviews!"
-
-# --- Create User Accounts ---
-accounts = [
-    { user_id: 1, name: 'John Doe', email: 'john@columbia.edu' , password: 'password' },
-    { user_id: 2, name: 'Kathy Lee', email: 'kathy@columbia.edu' , password: 'password' },
-    { user_id: 3, name: 'Hannah Lasso', email: 'hannah@barnard.edu' , password: 'password' },
-    { user_id: 4, name: 'Barbara Reddington', email: 'barbara@barnard.edu' , password: 'password' },
-    { user_id: 5, name: 'Janine Abbott', email: 'janine@barnard.edu' , password: 'password' },
-    { user_id: 6, name: 'Sam Patel', email: 'sam@columbia.edu' , password: 'password' },
-    { user_id: 7, name: 'Emily Chen', email: 'emily@columbia.edu' , password: 'password' },
-    { user_id: 8, name: 'Lina Morales', email: 'lina@columbia.edu' , password: 'password' },
-    { user_id: 9, name: 'Maya Brooks', email: 'maya@columbia.edu' , password: 'password' },
-    { user_id: 10, name: 'Chris Ramos', email: 'chris@columbia.edu' , password: 'password' }
-]
-UserAccount.delete_all
-accounts.each do |account|
-  UserAccount.create!(account)
-end
