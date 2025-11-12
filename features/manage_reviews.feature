@@ -6,14 +6,14 @@ Feature: Manage Reviews
 Background: reviews in database
 
 Given the following reviews exist:
-  | client_id | vendor_id | vendor_name          | title      | rating | comment                                                  | reviewer |
-  | 1          | 3          | Hannah Lasso         | Furniture  | 4      | Personally delivered to me.                             | client  |
-  | 2          | 3          | Hannah Lasso         | Furniture  | 3      | My chair had a scratch on the back.                     | client  |
-  | 5          | 3          | Hannah Lasso         | Furniture  | 5      | Was really friendly.                                    | client  |
-  | 4          | 3          | Hannah Lasso         | Furniture  | 5      | Sold at a really good price                             | client  |
-  | 1          | 4          | Barbara Reddington   | Manicure   | 1      | The nail design was not like the picture I showed.      | client  |
-  | 4          | 1          | John Doe             | Haircut   | 2      | They were late to the appointment.                      | vendor  |
-  | 3          | 4          | Barbara Reddington   | Manicure   | 1      | They were so rude to me.                               | client  |
+  | client_id | vendor_id | vendor_name          | title      | rating | comment                                                  | reviewer | client_name |
+  | 1          | 3          | Hannah Lasso         | Furniture  | 4      | Personally delivered to me.                             | client  | John Doe |
+  | 2          | 3          | Hannah Lasso         | Furniture  | 3      | My chair had a scratch on the back.                     | client  | Kathy Lee |
+  | 5          | 3          | Hannah Lasso         | Furniture  | 5      | Was really friendly.                                    | client  | Janine Abbott |
+  | 4          | 3          | Hannah Lasso         | Furniture  | 5      | Sold at a really good price                             | client  | Barbara Reddington |
+  | 1          | 4          | Barbara Reddington   | Manicure   | 1      | The nail design was not like the picture I showed.      | client  | John Doe |
+  | 4          | 1          | John Doe             | Haircut   | 2      | They were late to the appointment.                      | vendor  | Barbara Reddington |
+  | 3          | 4          | Barbara Reddington   | Manicure   | 1      | They were so rude to me.                               | client  | Hannah Lasso |
 
 
 Scenario: Show all reviews
