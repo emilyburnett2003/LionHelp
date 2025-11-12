@@ -58,5 +58,5 @@ The root page `/` is the login page. To login, use credientials that already exi
 
 ## To Test Locally
 - To execute RSpec tests, run `bundle exec rspec`
-- To execute user stories through Cucumber, run `bundle exec cucumber`
+- To execute user stories through Cucumber, run `bundle exec cucumber`. Line coverage will be printed at the end of the output based on SimpleCov.
 - Note: These commands need to run in the project's directory.

@@ -8,6 +8,10 @@ Given('I am on the review home page') do
     visit reviews_path
 end
 
+Given(/^I am on the new review page$/) do
+  visit new_review_path
+end
+
 Then('I should see {string} {int} times') do |vendor_name, count|
     expect(page).to have_text(vendor_name, count: count)
 end
@@ -32,7 +36,19 @@ end
 
 Given('the following review exists:') do |table|
   table.hashes.each do |row|
-    Review.create!(row)
+    client = UserAccount.find_by(name: row['client_name']) || UserAccount.first
+    vendor = UserAccount.find_by(name: row['vendor_name'])
+
+    Review.create!(
+      client_id: client.id,
+      vendor_id: vendor.id,
+      vendor_name: vendor.name,
+      client_name: client.name,
+      title: row['title'],
+      rating: row['rating'],
+      comment: row['comment'],
+      reviewer: row['reviewer'] || 'client'
+    )
   end
 end
 
@@ -50,6 +66,38 @@ When('I delete the review {string}, {string}, {string}, {string}') do |vendor_na
 end
 
 
+When(/^I select "([^"]*)" from "([^"]*)"$/) do |option, field|
+  select(option, from: field)
+end
+
 Given("I am on the review page") do
   visit new_review_path
+end
+
+When(/^I select the reviewer type as "([^"]+)"$/) do |type|
+  select type, from: "review_type"
+end
+
+When(/^I select the user being reviewed as "([^"]+)"$/) do |user_name|
+  select user_name, from: "reviewed_name"
+end
+
+When(/^I fill in the service provided with "([^"]+)"$/) do |title|
+  fill_in "service_provided", with: title
+end
+
+When(/^I fill in the review content with "([^"]+)"$/) do |content|
+  fill_in "review_comment", with: content
+end
+
+When(/^I fill in the review rating with "([^"]+)"$/) do |rating|
+  fill_in "review_rating", with: rating
+end
+
+When(/^I submit the new review$/) do
+  click_button "Create Review"
+end
+
+Then(/^I should see the review success message$/) do
+  expect(page).to have_content("review posted successfully!")
 end

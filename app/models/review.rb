@@ -1,16 +1,30 @@
 class Review < ActiveRecord::Base
-    def self.vendor_reviews(vendor_id)
-        Review.where(vendor_id: vendor_id, reviewer: 'client')
-    end
-    def self.client_reviews(client_id)
-        Review.where(client_id: client_id, reviewer: 'vendor')
-    end
-
-
     validates :rating, numericality: { 
-    greater_than_or_equal_to: 0, 
-    less_than_or_equal_to: 10,
-    message: "must be between 0 and 10"
-}
-
-end
+      greater_than_or_equal_to: 0, 
+      less_than_or_equal_to: 10,
+      message: "must be between 0 and 10"
+    }
+  
+    validates :reviewer, inclusion: { in: %w[client vendor] }
+  
+    validate :reviewed_person_must_exist
+  
+    def self.vendor_reviews(vendor_id)
+      where(vendor_id: vendor_id, reviewer: 'client')
+    end
+  
+    def self.client_reviews(client_id)
+      where(client_id: client_id, reviewer: 'vendor')
+    end
+  
+    private
+  
+    def reviewed_person_must_exist
+      if reviewer == 'client'
+        errors.add(:vendor_name, "Vendor not found") unless UserAccount.exists?(name: vendor_name)
+      elsif reviewer == 'vendor'
+        errors.add(:client_name, "Client not found") unless UserAccount.exists?(name: client_name)
+      end
+    end
+  end
+  

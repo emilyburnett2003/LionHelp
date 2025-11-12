@@ -1,28 +1,26 @@
 <h2>Create New Review</h2>
 
+<%= form_with model: @review, local: true, class: 'form' do |f| %>
+  <%= f.label :reviewer, 'I am reviewing a...', class: 'col-form-label' %>
+  <%= f.select :reviewer, [['Vendor', 'vendor'], ['Client', 'client']],
+               { prompt: 'Select review type' },
+               class: 'form-control', id: 'review_type' %>
 
-<%= form_tag reviews_path, class: 'form' do %>
+  <%= f.label :client_name, 'User Being Reviewed', class: 'col-form-label' %>
+  <%= f.select :client_name, UserAccount.all.pluck(:name), 
+               { prompt: 'Select user' },
+               class: 'form-control', id: 'reviewed_name' %>
 
+  <%= f.label :title, 'Service Provided', class: 'col-form-label' %>
+  <%= f.text_field :title, class: 'form-control', id: 'service_provided' %>
 
-  <%= label :review, :vendor_name, 'Vendor', class: 'col-form-label' %>
-  <%= text_field :review, :vendor_name, class: 'form-control' %>
+  <%= f.label :comment, 'Review', class: 'col-form-label' %>
+  <%= f.text_area :comment, class: 'form-control', id: 'review_comment' %>
 
-
-  <%= label :review, :title, 'what service did they provide', class: 'col-form-label' %>
-  <%= text_area :review, :title, class: 'form-control' %>
-
-
-  <%= label :review, :comment, 'Review', class: 'col-form-label' %>
-  <%= text_area :review, :comment, class: 'form-control' %>
-
-
-
-
-  <%= label :review, :rating, 'Rating out of 10', class: 'col-form-label' %>
-  <%= number_field :review, :rating, step: 0.01, class: 'form-control' %>
-
+  <%= f.label :rating, 'Rating (0–10)', class: 'col-form-label' %>
+  <%= f.number_field :rating, step: 0.1, class: 'form-control', id: 'review_rating' %>
 
   <br/>
-  <%= submit_tag 'Create Review', class: 'btn btn-primary' %>
+  <%= f.submit 'Create Review', class: 'btn btn-primary' %>
   <%= link_to 'Cancel', reviews_path, class: 'btn btn-secondary' %>
 <% end %>
