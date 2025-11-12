@@ -28,10 +28,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_11_12_122139) do
     t.string "title"
     t.text "description"
     t.decimal "price"
-    t.string "poster"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "vendor_id"
+    t.string "vendor_name"
   end
 
   create_table "user_accounts", force: :cascade do |t|

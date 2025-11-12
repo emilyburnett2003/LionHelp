@@ -6,16 +6,28 @@ Feature: Using the app with an account
 Background:
   Given the following accounts exist:
     | user_id    | name          | email             | password   |
-    | 0          | Kathy Lee     | kathy@gmail.com   | password   |
-    | 1          | John Doe      | john@gmail.com    | password   |
+    | 0          | Kathy Lee     | kl1234@barnard.edu   | password   |
+    | 1          | John Doe      | jd1234@columba.edu    | password   |
   And I am on the login page
 
 Scenario: I have an account and I successfully login
-  When I login with "john@gmail.com" and "password"
+  When I login with "jd1234@columba.edu" and "password"
   Then I should see "Welcome, John Doe"
 
+Scenario: I attempt to login with empty fields
+  When I login with "" and ""
+  Then I should be on login page
+
+Scenario: I attempt to login with empty email field
+  When I login with "" and "password"
+  Then I should be on login page
+
+Scenario: I attempt to login with empty password field
+  When I login with "jd1234@columbia.edu" and ""
+  Then I should be on login page
+
 Scenario: I have an account and I use the wrong password
-  When I login with "john@gmail.com" and "asdf"
+  When I login with "jd1234@columba.edu" and "asdf"
   Then I should see "Incorrect password."
   Then I should be on login page
 
@@ -26,17 +38,42 @@ Scenario: I do not have an account and I attempt to login
 
 Scenario: I create an account with valid credentials
   When I go to create an account
-  And I sign up with the following: name as "Jane Doe", email as "jane@gmail.com", password as "password"
-  Then I should see "Welcome, Jane Doe"
+  And I sign up with the following: name as "Kristine Pham", email as "klp1234@columbia.edu", password as "password"
+  Then I should see "Welcome, Kristine Pham"
+
+Scenario: I create an account with non-Columbia/Barnard email
+  When I go to create an account
+  And I sign up with the following: name as "Kristine Pham", email as "k124@gmail.com", password as "password"
+  Then I should see "This is not a valid Columbia/Barnard email address."
+
+Scenario: I attempt to create an account with empty fields
+  When I go to create an account
+  And I sign up with the following: name as "", email as "", password as ""
+  Then I should be on signup page
+
+Scenario: I attempt to create an account with empty name field
+  When I go to create an account
+  And I sign up with the following: name as "", email as "kl2157@barnard.edu", password as "password"
+  Then I should be on signup page
+
+Scenario: I attempt to create an account with empty email field
+  When I go to create an account
+  And I sign up with the following: name as "Kristine Pham", email as "", password as "password"
+  Then I should be on signup page
+
+Scenario: I attempt to create an account with empty password field
+  When I go to create an account
+  And I sign up with the following: name as "Kristine Pham", email as "klp2157@barnard.edu", password as ""
+  Then I should be on signup page
 
 Scenario: I create an account with an existing email
   When I go to create an account
-  And I sign up with the following: name as "John Doe", email as "john@gmail.com", password as "password"
+  And I sign up with the following: name as "John Doe", email as "jd1234@columba.edu", password as "password"
   Then I should see "An account with this email already exists."
   Then I should be on signup page
 
 Scenario: I logout and I am back to login page
-  When I login with "john@gmail.com" and "password"
+  When I login with "jd1234@columba.edu" and "password"
   Then I should see "Welcome, John Doe"
   When I click Logout
   Then I should be on login page

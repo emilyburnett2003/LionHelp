@@ -5,7 +5,7 @@ Feature: View all services
 
   Background:
     Given the following services exist:
-      | title                 | description                         | price | poster     |
+      | title                 | description                         | price | vendor_name     |
       | Meal Swipes           | Swipe access to dining halls         | 9.00  | Kathy Lee  |
       | Tutoring – COMS W1004 | Personalized help with intro CS      | 25.00 | John Doe   |
 

@@ -16,11 +16,15 @@ class ReviewsController < ApplicationController
     end
 
     @review = Review.new(review_params)
-    if @review.save
-      flash[:notice] = "review posted successfully!"
-      redirect_to reviews_path
+    if review_params[:rating].to_i > 10
+      flash[:notice] = "Rating is too high."
+      redirect_to new_review_path
+    elsif review_params[:rating].to_i < 0
+      flash[:notice] = "Rating is too low."
+      redirect_to new_review_path
     else
-      render :new
+      flash[:notice] = "Review posted successfully!"
+      redirect_to reviews_path
     end
   end
 

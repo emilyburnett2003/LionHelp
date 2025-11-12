@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Service, type: :model do
-  let(:valid_attributes) { { title: "Laundry Help", description: "Fold laundry", price: 15, poster: "Emily" } }
+  let(:valid_attributes) { { title: "Laundry Help", description: "Fold laundry", price: 15, vendor_name: "Emily" } }
 
   it 'is valid with all attributes' do
     expect(Service.new(valid_attributes)).to be_valid
@@ -20,9 +20,9 @@ RSpec.describe Service, type: :model do
   end
 
   it 'is invalid without a poster' do
-    service = Service.new(valid_attributes.except(:poster))
+    service = Service.new(valid_attributes.except(:vendor_name))
     expect(service).not_to be_valid
-    expect(service.errors[:poster]).to include("can't be blank")
+    expect(service.errors[:vendor_name]).to include("can't be blank")
   end
 
   it 'is invalid with negative price' do

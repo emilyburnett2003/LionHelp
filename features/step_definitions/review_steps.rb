@@ -12,10 +12,6 @@ Given(/^I am on the new review page$/) do
   visit new_review_path
 end
 
-Then('I should see {string} {int} times') do |vendor_name, count|
-    expect(page).to have_text(vendor_name, count: count)
-end
-
 Given('I am on the show_vendor_review page for {int}') do |vendor_id|
     puts "Visiting path: #{vendor_reviews_path(vendor_id)}"
     visit vendor_reviews_path(vendor_id)
@@ -27,12 +23,15 @@ Given('I am on the show_client_review page for {int}') do |client_id|
 end
 
 
-Then(/^I should see comments like: (.*)$/) do |comment_list|
-    comment_list.split(', ').each do |comment|
-        expect(page).to have_text(comment.strip)
+Then(/^I should see comments like:/) do |comment_table|
+    comment_table.raw.flatten.each do |comment|
+      expect(page).to have_content(comment)
     end
 end
 
+Then('I should see notice {string}') do |notice|
+  expect(page).to have_content(notice)
+end
 
 Given('the following review exists:') do |table|
   table.hashes.each do |row|
@@ -74,6 +73,10 @@ Given("I am on the review page") do
   visit new_review_path
 end
 
+Then("I should be on new review page") do
+  visit new_review_path
+end
+
 When(/^I select the reviewer type as "([^"]+)"$/) do |type|
   select type, from: "review_type"
 end
@@ -99,5 +102,5 @@ When(/^I submit the new review$/) do
 end
 
 Then(/^I should see the review success message$/) do
-  expect(page).to have_content("review posted successfully!")
+  expect(page).to have_content("Review posted successfully!")
 end

@@ -3,16 +3,16 @@
 
 # --- Create User Accounts ---
 accounts = [
-    { user_id: 1, name: 'John Doe', email: 'john@gmail.com' , password: 'password' },
-    { user_id: 2, name: 'Kathy Lee', email: 'kathy@gmail.com' , password: 'password' },
-    { user_id: 3, name: 'Hannah Lasso', email: 'hannah@gmail.com' , password: 'password' },
-    { user_id: 4, name: 'Barbara Reddington', email: 'barbara@gmail.com' , password: 'password' },
-    { user_id: 5, name: 'Janine Abbott', email: 'janine@gmail.com' , password: 'password' },
-    { user_id: 6, name: 'Sam Patel', email: 'sam@gmail.com' , password: 'password' },
-    { user_id: 7, name: 'Emily Chen', email: 'emily@gmail.com' , password: 'password' },
-    { user_id: 8, name: 'Lina Morales', email: 'lina@gmail.com' , password: 'password' },
-    { user_id: 9, name: 'Maya Brooks', email: 'maya@gmail.com' , password: 'password' },
-    { user_id: 10, name: 'Chris Ramos', email: 'chris@gmail.com' , password: 'password' }
+    { user_id: 1, name: 'John Doe', email: 'jd1234@columbia.edu' , password: 'password' },
+    { user_id: 2, name: 'Kathy Lee', email: 'kl1234@columbia.edu' , password: 'password' },
+    { user_id: 3, name: 'Hannah Lasso', email: 'hl1234@barnard.edu' , password: 'password' },
+    { user_id: 4, name: 'Barbara Reddington', email: 'br1234@barnard.edu' , password: 'password' },
+    { user_id: 5, name: 'Janine Abbott', email: 'ja1234@barnard.edu' , password: 'password' },
+    { user_id: 6, name: 'Sam Patel', email: 'sp1234@columbia.edu' , password: 'password' },
+    { user_id: 7, name: 'Emily Chen', email: 'ec1234@columbia.edu' , password: 'password' },
+    { user_id: 8, name: 'Lina Morales', email: 'lm1234@columbia.edu' , password: 'password' },
+    { user_id: 9, name: 'Maya Brooks', email: 'mb1234@columbia.edu' , password: 'password' },
+    { user_id: 10, name: 'Chris Ramos', email: 'cr1234@columbia.edu' , password: 'password' }
 ]
 UserAccount.delete_all
 accounts.each do |account|
@@ -23,15 +23,15 @@ puts "Created #{UserAccount.count} accounts!"
 
 # --- Create Columbia Student Services ---
 services = [
-  { vendor_id: 2, title: 'Meal Swipes', poster: 'Kathy Lee', description: 'Selling meal swipes! Can meet at Lerner or JJ’s.', price: 9.00 },
-  { vendor_id: 1, title: 'Tutoring – COMS W1004', poster: 'John Doe', description: 'One-hour tutoring sessions for Java/Python intro CS. Experienced TA.', price: 25.00 },
-  { vendor_id: 5, title: 'Dorm Cleaning', poster: 'Janine Abbott', description: 'Will deep-clean your Carman or EC suite.', price: 40.00 },
-  { vendor_id: 3, title: 'Furniture Pickup', poster: 'Hannah Lasso', description: 'Selling gently used IKEA desk and chair. Can deliver anywhere on campus.', price: 60.00 },
-  { vendor_id: 6, title: 'Print Station Helper', poster: 'Sam Patel', description: 'Trouble printing in Butler or Mudd? I’ll meet you and help debug it.', price: 5.00 },
-  { vendor_id: 7, title: 'Resume Review & Interview Prep', poster: 'Emily Chen', description: 'Peer review of CS and engineering resumes. Includes mock interviews.', price: 30.00 },
-  { vendor_id: 8, title: 'Bike Rentals Around Campus', poster: 'Lina Morales', description: 'Rent my foldable bike for quick trips around Morningside Heights.', price: 15.00 },
-  { vendor_id: 9, title: 'Laundry Folding Service', poster: 'Maya Brooks', description: 'I’ll fold and organize your washed clothes for you. Pickup from John Jay.', price: 12.00 },
-  { vendor_id: 10, title: 'Headshots for LinkedIn', poster: 'Chris Ramos', description: 'Quick professional headshots taken on Low Steps. DSLR + retouching included.', price: 25.00 }
+  { vendor_id: 2, title: 'Meal Swipes', vendor_name: 'Kathy Lee', description: 'Selling meal swipes! Can meet at Lerner or JJ’s.', price: 9.00 },
+  { vendor_id: 1, title: 'Tutoring – COMS W1004', vendor_name: 'John Doe', description: 'One-hour tutoring sessions for Java/Python intro CS. Experienced TA.', price: 25.00 },
+  { vendor_id: 5, title: 'Dorm Cleaning', vendor_name: 'Janine Abbott', description: 'Will deep-clean your Carman or EC suite.', price: 40.00 },
+  { vendor_id: 3, title: 'Furniture Pickup', vendor_name: 'Hannah Lasso', description: 'Selling gently used IKEA desk and chair. Can deliver anywhere on campus.', price: 60.00 },
+  { vendor_id: 6, title: 'Print Station Helper', vendor_name: 'Sam Patel', description: 'Trouble printing in Butler or Mudd? I’ll meet you and help debug it.', price: 5.00 },
+  { vendor_id: 7, title: 'Resume Review & Interview Prep', vendor_name: 'Emily Chen', description: 'Peer review of CS and engineering resumes. Includes mock interviews.', price: 30.00 },
+  { vendor_id: 8, title: 'Bike Rentals Around Campus', vendor_name: 'Lina Morales', description: 'Rent my foldable bike for quick trips around Morningside Heights.', price: 15.00 },
+  { vendor_id: 9, title: 'Laundry Folding Service', vendor_name: 'Maya Brooks', description: 'I’ll fold and organize your washed clothes for you. Pickup from John Jay.', price: 12.00 },
+  { vendor_id: 10, title: 'Headshots for LinkedIn', vendor_name: 'Chris Ramos', description: 'Quick professional headshots taken on Low Steps. DSLR + retouching included.', price: 25.00 }
 ]
 
 Service.delete_all
@@ -68,4 +68,3 @@ reviews.each do |review|
 end
 
 puts "Created #{Review.count} reviews!"
-

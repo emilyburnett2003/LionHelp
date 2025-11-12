@@ -26,14 +26,19 @@ Given the following reviews exist:
 
 Scenario: Show all reviews
     Given I am on the review home page
-    Then I should see "Hannah Lasso" 4 times
-    Then I should see "Barbara Reddington" 2 times
+    Then I should see comments like:
+      | They were late to the appointment. |
+      | Personally delivered to me         |
+      | Sold at a really good price        |
 
 Scenario: Show reviews for Barbara Reddington
     Given I am on the show_vendor_review page for 4
-    Then I should see comments like: They were so rude to me., The nail design was not like the picture I showed.
+    Then I should see comments like:
+      | They were so rude to me.                           |
+      | The nail design was not like the picture I showed. |
     Given I am on the show_client_review page for 4
-    Then I should see comments like: They were late to the appointment.
+    Then I should see comments like:
+      | They were late to the appointment. |
 
 Scenario: Delete a review
   Given the following review exists:
@@ -51,4 +56,31 @@ Scenario: Create a new review
   And I fill in the review rating with "4"
   And I submit the new review
   Then I should see the review success message
+
+Scenario: Create a review with empty fields
+  Given I am on the new review page
+  And I submit the new review
+  Then I should be on new review page
+
+Scenario: I rate too high
+  Given I am on the new review page
+  When I select the reviewer type as "Client"
+  And I select the user being reviewed as "John Doe"
+  And I fill in the service provided with "Lion Help!"
+  And I fill in the review content with "Great service!"
+  And I fill in the review rating with "20"
+  And I submit the new review
+  Then I should see notice "Rating is too high."
+  Then I should be on new review page
+
+Scenario: I rate too low
+  Given I am on the new review page
+  When I select the reviewer type as "Client"
+  And I select the user being reviewed as "John Doe"
+  And I fill in the service provided with "Lion Help!"
+  And I fill in the review content with "Great service!"
+  And I fill in the review rating with "-10"
+  And I submit the new review
+  Then I should see notice "Rating is too low."
+  Then I should be on new review page
 

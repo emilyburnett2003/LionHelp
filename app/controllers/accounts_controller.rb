@@ -25,10 +25,13 @@ class AccountsController < ApplicationController
   end
 
   def create
-    # check if email already exists
-    existing_user = UserAccount.find_by(email: account_params[:email])
+    email = account_params[:email]
+    existing_user = UserAccount.find_by(email: email)
     if !existing_user.nil?
       flash[:notice] = "An account with this email already exists."
+      redirect_to new_account_path
+    elsif !email.match(/^[A-Za-z]{2,3}\d{4}@(columbia|barnard).edu/)
+      flash[:notice] = "This is not a valid Columbia/Barnard email address. Note that a UNI is 2 or 3 letters followed by 4 digits."
       redirect_to new_account_path
     else
       user = UserAccount.new(account_params)
