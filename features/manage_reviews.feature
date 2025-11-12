@@ -5,6 +5,14 @@ Feature: Manage Reviews
 
 Background: reviews in database
 
+Given the following accounts exist:
+  | name              | email              | password |
+  | John Doe          | john@gmail.com     | password |
+  | Kathy Lee         | kathy@gmail.com    | password |
+  | Hannah Lasso      | hannah@gmail.com   | password |
+  | Barbara Reddington| barbara@gmail.com  | password |
+  | Janine Abbott     | janine@gmail.com   | password |
+
 Given the following reviews exist:
   | client_id | vendor_id | vendor_name          | title      | rating | comment                                                  | reviewer | client_name |
   | 1          | 3          | Hannah Lasso         | Furniture  | 4      | Personally delivered to me.                             | client  | John Doe |
@@ -35,10 +43,12 @@ Scenario: Delete a review
   Then I should see "Review deleted."
 
 Scenario: Create a new review
-  Given I am on the review page
-  When I fill in "Vendor" with "Hannah Lasso"
-  And I fill in "what service did they provide" with "Furniture"
-  And I fill in "Review" with "Personally delivered to me."
-  And I fill in "Rating out of 10" with "4"
-  And I press "Create Review"
-  Then I should see "review posted successfully!"
+  Given I am on the new review page
+  When I select the reviewer type as "Client"
+  And I select the user being reviewed as "John Doe"
+  And I fill in the service provided with "Lion Help!"
+  And I fill in the review content with "Great service!"
+  And I fill in the review rating with "4"
+  And I submit the new review
+  Then I should see the review success message
+
