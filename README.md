@@ -44,7 +44,7 @@ bundle exec rackup --port <PORT_NUM>
 
 ## Available Routes
 ### Login Feature
-The root page `/` is the login page. To login, use credientials that already exist in our UserAccount database. Otherwise, create a new account with an email that doesn't already exist by 1) pressing "Create an Account" button on the home page, or 2) going to `/new`
+The root page `/` is the login page. To login, use credientials that already exist in our UserAccount database. Otherwise, create a new account with a Columbia/Barnard email that doesn't already exist by 1) pressing "Create an Account" button on the home page, or 2) going to `/new`
 
 ### Service Feature
 - To view a specific service based on its id number: `/services/{service_id}`
@@ -58,5 +58,6 @@ The root page `/` is the login page. To login, use credientials that already exi
 
 ## To Test Locally
 - To execute RSpec tests, run `bundle exec rspec`
-- To execute user stories through Cucumber, run `bundle exec cucumber`. Line coverage will be printed at the end of the output based on SimpleCov.
-- Note: These commands need to run in the project's directory.
+- To execute user stories through Cucumber, run `bundle exec cucumber`.
+- Line coverage will be printed at the end of the output based on SimpleCov.
+- These commands need to run in the project's directory.
