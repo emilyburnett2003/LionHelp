@@ -23,15 +23,15 @@ puts "Created #{UserAccount.count} accounts!"
 
 # --- Create Columbia Student Services ---
 services = [
-  { vendor_id: 2, title: 'Meal Swipes', vendor_name: 'Kathy Lee', description: 'Selling meal swipes! Can meet at Lerner or JJ’s.', price: 9.00 },
-  { vendor_id: 1, title: 'Tutoring – COMS W1004', vendor_name: 'John Doe', description: 'One-hour tutoring sessions for Java/Python intro CS. Experienced TA.', price: 25.00 },
-  { vendor_id: 5, title: 'Dorm Cleaning', vendor_name: 'Janine Abbott', description: 'Will deep-clean your Carman or EC suite.', price: 40.00 },
-  { vendor_id: 3, title: 'Furniture Pickup', vendor_name: 'Hannah Lasso', description: 'Selling gently used IKEA desk and chair. Can deliver anywhere on campus.', price: 60.00 },
-  { vendor_id: 6, title: 'Print Station Helper', vendor_name: 'Sam Patel', description: 'Trouble printing in Butler or Mudd? I’ll meet you and help debug it.', price: 5.00 },
-  { vendor_id: 7, title: 'Resume Review & Interview Prep', vendor_name: 'Emily Chen', description: 'Peer review of CS and engineering resumes. Includes mock interviews.', price: 30.00 },
-  { vendor_id: 8, title: 'Bike Rentals Around Campus', vendor_name: 'Lina Morales', description: 'Rent my foldable bike for quick trips around Morningside Heights.', price: 15.00 },
-  { vendor_id: 9, title: 'Laundry Folding Service', vendor_name: 'Maya Brooks', description: 'I’ll fold and organize your washed clothes for you. Pickup from John Jay.', price: 12.00 },
-  { vendor_id: 10, title: 'Headshots for LinkedIn', vendor_name: 'Chris Ramos', description: 'Quick professional headshots taken on Low Steps. DSLR + retouching included.', price: 25.00 }
+  { vendor_id: 2, title: 'Meal Swipes', vendor_name: 'Kathy Lee', description: 'Selling meal swipes! Can meet at Lerner or JJ’s.', price: 9.00, category: 'Food' },
+  { vendor_id: 1, title: 'Tutoring – COMS W1004', vendor_name: 'John Doe', description: 'One-hour tutoring sessions for Java/Python intro CS. Experienced TA.', price: 25.00, category: 'Tutoring' },
+  { vendor_id: 5, title: 'Dorm Cleaning', vendor_name: 'Janine Abbott', description: 'Will deep-clean your Carman or EC suite.', price: 40.00, category: 'Cleaning' },
+  { vendor_id: 3, title: 'Furniture Pickup', vendor_name: 'Hannah Lasso', description: 'Selling gently used IKEA desk and chair. Can deliver anywhere on campus.', price: 60.00, category: 'Transportation' },
+  { vendor_id: 6, title: 'Print Station Helper', vendor_name: 'Sam Patel', description: 'Trouble printing in Butler or Mudd? I’ll meet you and help debug it.', price: 5.00, category: 'Tech Help' },
+  { vendor_id: 7, title: 'Resume Review & Interview Prep', vendor_name: 'Emily Chen', description: 'Peer review of CS and engineering resumes. Includes mock interviews.', price: 30.00, category: 'Tutoring' },
+  { vendor_id: 8, title: 'Bike Rentals Around Campus', vendor_name: 'Lina Morales', description: 'Rent my foldable bike for quick trips around Morningside Heights.', price: 15.00, category: 'Transportation' },
+  { vendor_id: 9, title: 'Laundry Folding Service', vendor_name: 'Maya Brooks', description: 'I’ll fold and organize your washed clothes for you. Pickup from John Jay.', price: 12.00, category: 'Cleaning' },
+  { vendor_id: 10, title: 'Headshots for LinkedIn', vendor_name: 'Chris Ramos', description: 'Quick professional headshots taken on Low Steps. DSLR + retouching included.', price: 25.00, category: 'Other' }
 ]
 
 Service.delete_all
