@@ -50,10 +50,10 @@
   <h2>Reviews</h2>
 
 <div class="button-row">
-  <%= link_to 'All Reviews', reviews_path, class: 'btn btn-secondary' %>
+  <%= link_to 'All Reviews', reviews_path, class: 'btn btn-primary' %>
   <%= link_to 'Reviews About Me (Vendor)', reviews_path(filter: 'about_me_vendor'), class: 'btn btn-primary' %>
-  <%= link_to 'Reviews I Wrote', reviews_path(filter: 'written_by_me'), class: 'btn btn-outline-primary' %>
-  <%= link_to 'Write a New Review', new_review_path, class: 'btn btn-success' %>
+  <%= link_to 'Reviews I Wrote', reviews_path(filter: 'written_by_me'), class: 'btn btn-primary' %>
+  <%= link_to 'Write a New Review', new_review_path, class: 'btn btn-primary' %>
 </div>
 
 
