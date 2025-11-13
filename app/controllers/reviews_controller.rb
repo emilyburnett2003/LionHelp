@@ -55,11 +55,20 @@ end
 
 
 
-  def destroy
-    review = Review.find(params[:id])
+def destroy
+  review = Review.find(params[:id])
+
+  if (review.reviewer == "vendor" && review.vendor_name == session[:user_name]) ||
+     (review.reviewer == "client" && review.client_name == session[:user_name])
     review.destroy
-    redirect_to reviews_path, notice: 'Review deleted.'
+    flash[:notice] = "Review deleted."
+  else
+    flash[:alert] = "You can only delete your own reviews."
   end
+
+  redirect_to reviews_path
+end
+
 
   def review_params
     params.require(:review).permit(:vendor_name, :client_name, :title, :rating, :comment, :reviewer)

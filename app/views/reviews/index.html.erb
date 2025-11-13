@@ -42,9 +42,10 @@
 </style>
 
 <div class="centered">
-  <% if flash[:notice] %>
-    <p class="notice"><%= flash[:notice] %></p>
+  <% flash.each do |key, message| %>
+    <p class="<%= key %>"><%= message %></p>
   <% end %>
+
 
   <h2>Reviews</h2>
 
