@@ -1,32 +1,59 @@
 class ReviewsController < ApplicationController
-  def index
-    @reviews = Review.all
+def index
+  @reviews = Review.all
+
+  if params[:filter] == "about_me_vendor" && session[:user_name].present?
+    @reviews = @reviews.where(reviewer: "client", vendor_name: session[:user_name])
+
+  elsif params[:filter] == "written_by_me" && session[:user_name].present?
+    @reviews = @reviews.where(client_name: session[:user_name]).or(
+      @reviews.where(vendor_name: session[:user_name], reviewer: "vendor")
+    )
+
+  elsif params[:filter] == "vendor"
+    @reviews = @reviews.where(reviewer: "vendor")
+
+  elsif params[:filter] == "client"
+    @reviews = @reviews.where(reviewer: "client")
   end
+end
+
 
   def new
     @review = Review.new
   end
 
-  def create
-    # the form shows the type being reviewed, but reviewer column stores who is writing
-    if params[:review][:reviewer] == 'vendor'
-      params[:review][:reviewer] = 'client'  # client is writing review of vendor
-    elsif params[:review][:reviewer] == 'client'
-      params[:review][:reviewer] = 'vendor'  # vendor is writing review of client
-    end
-
-    @review = Review.new(review_params)
-    if review_params[:rating].to_i > 10
-      flash[:notice] = "Rating is too high."
-      redirect_to new_review_path
-    elsif review_params[:rating].to_i < 0
-      flash[:notice] = "Rating is too low."
-      redirect_to new_review_path
-    else
-      flash[:notice] = "Review posted successfully!"
-      redirect_to reviews_path
-    end
+def create
+  if params[:review][:reviewer] == 'vendor'
+    params[:review][:vendor_name] = params[:review][:client_name]
+    params[:review][:client_name] = session[:user_name]  
+    params[:review][:reviewer] = 'client'
+  elsif params[:review][:reviewer] == 'client'
+    # vendor is writing review of client
+    params[:review][:vendor_name] = session[:user_name]  
+    params[:review][:reviewer] = 'vendor'
   end
+
+  @review = Review.new(review_params)
+
+  if @review.rating.to_i > 10
+    flash[:notice] = "Rating is too high."
+    redirect_to new_review_path and return
+  elsif @review.rating.to_i < 0
+    flash[:notice] = "Rating is too low."
+    redirect_to new_review_path and return
+  end
+
+  if @review.save
+    flash[:notice] = "Review posted successfully!"
+    redirect_to reviews_path
+  else
+    flash[:notice] = "Error saving review: " + @review.errors.full_messages.join(", ")
+    redirect_to new_review_path
+  end
+end
+
+
 
   def destroy
     review = Review.find(params[:id])
