@@ -6,7 +6,8 @@ RSpec.describe ServicesController, type: :controller do
       title: "Laundry Help",
       description: "Fold and organize laundry",
       price: 15.00,
-      vendor_name: "Emily"
+      vendor_name: "Emily",
+      category: "Cleaning"
     }
   end
 
@@ -21,6 +22,20 @@ RSpec.describe ServicesController, type: :controller do
       get :index
       expect(assigns(:services)).to include(service)
       expect(response).to render_template(:index)
+    end
+    context "with category filter" do
+      let!(:service_food) { Service.create!(title: "Pizza Delivery", description: "Late night snacks", price: 10, vendor_name: "Bob", category: "Food") }
+      let!(:service_tutoring) { Service.create!(title: "Tutoring", description: "Math help", price: 20, vendor_name: "Alice", category: "Tutoring") }
+    
+      it "returns only services matching the selected category" do
+        get :index, params: { category: "Food" }
+        expect(assigns(:services)).to eq([service_food])
+      end
+    
+      it "returns all services if category is 'All'" do
+        get :index, params: { category: "All" }
+        expect(assigns(:services)).to include(service_food, service_tutoring)
+      end
     end
   end
 

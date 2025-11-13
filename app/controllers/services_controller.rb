@@ -4,9 +4,12 @@ class ServicesController < ApplicationController
     end
 
     def index
+      if params[:category].present? && params[:category] != "All"
+        @services = Service.where(category: params[:category])
+      else
         @services = Service.all
-        @user_name = session[:user_name]
       end
+    end
   
     def create
         @service = Service.new(service_params)
@@ -32,7 +35,7 @@ class ServicesController < ApplicationController
     private
   
     def service_params
-      params.require(:service).permit(:title, :description, :price, :vendor_name)
+      params.require(:service).permit(:title, :description, :price, :vendor_id, :vendor_name, :category)
     end
   end
   
