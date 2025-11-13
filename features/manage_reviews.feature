@@ -7,11 +7,11 @@ Background: reviews in database
 
 Given the following accounts exist:
   | name              | email              | password |
-  | John Doe          | john@gmail.com     | password |
-  | Kathy Lee         | kathy@gmail.com    | password |
-  | Hannah Lasso      | hannah@gmail.com   | password |
-  | Barbara Reddington| barbara@gmail.com  | password |
-  | Janine Abbott     | janine@gmail.com   | password |
+  | John Doe          | jd1234@columbia.edu     | password |
+  | Kathy Lee         | kl1234@barnard.edu    | password |
+  | Hannah Lasso      | hl1234@barnard.edu   | password |
+  | Barbara Reddington| br1234@barnard.edu  | password |
+  | Janine Abbott     | ja1234@columbia.edu   | password |
 
 Given the following reviews exist:
   | client_id | vendor_id | vendor_name          | title      | rating | comment                                                  | reviewer | client_name |

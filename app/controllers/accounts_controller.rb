@@ -32,7 +32,7 @@ class AccountsController < ApplicationController
     if !existing_user.nil?
       flash[:notice] = "An account with this email already exists."
       redirect_to new_account_path
-    elsif !email.match(/^[A-Za-z]{2,3}\d{4}@(columbia|barnard).edu/)
+    elsif !email.match(/^[A-Za-z]{2,3}\d{4}@(columbia|barnard).edu$/)
       flash[:notice] = "This is not a valid Columbia/Barnard email address. Note that a UNI is 2 or 3 letters followed by 4 digits."
       redirect_to new_account_path
     else
