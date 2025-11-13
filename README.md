@@ -44,7 +44,7 @@ bundle exec rackup --port <PORT_NUM>
 
 ## Available Routes
 ### Login Feature
-The root page `/` is the login page. To login, use credientials that already exist in our UserAccount database. Otherwise, create a new account with an email that doesn't already exist by 1) pressing "Create an Account" button on the home page, or 2) going to `/new`
+The root page `/` is the login page. To login, use credientials that already exist in our UserAccount database. Otherwise, create a new account with a Columbia/Barnard email that doesn't already exist by 1) pressing "Create an Account" button on the home page, or 2) going to `/new`
 
 ### Service Feature
 - To view a specific service based on its id number: `/services/{service_id}`
